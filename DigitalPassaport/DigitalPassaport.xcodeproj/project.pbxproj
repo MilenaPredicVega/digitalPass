@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD109A202A934A1200D8E0E1 /* FlashPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD109A1F2A934A1200D8E0E1 /* FlashPassViewModel.swift */; };
+		FD109A232A93609F00D8E0E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FD109A222A93609F00D8E0E1 /* Alamofire */; };
+		FD208BAD2A97452800519DE9 /* PassAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BAC2A97452800519DE9 /* PassAccountView.swift */; };
+		FD208BAF2A97472700519DE9 /* UserAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BAE2A97472700519DE9 /* UserAccountView.swift */; };
+		FD208BB12A9747A300519DE9 /* CredentialsAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BB02A9747A300519DE9 /* CredentialsAccountView.swift */; };
+		FD208BB62A975DAC00519DE9 /* PassesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BB52A975DAC00519DE9 /* PassesListViewModel.swift */; };
+		FD208BB82A976AA500519DE9 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BB72A976AA500519DE9 /* CreateAccountViewModel.swift */; };
+		FD208BBB2A976B4500519DE9 /* CreateAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBA2A976B4500519DE9 /* CreateAccountRepository.swift */; };
+		FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */; };
+		FD208BC02A97716A00519DE9 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBF2A97716A00519DE9 /* NetworkingService.swift */; };
+		FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC22A97761B00519DE9 /* AccountResponse.swift */; };
+		FD208BC52A9777F600519DE9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC42A9777F600519DE9 /* APIEndpoints.swift */; };
+		FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC62A977AC400519DE9 /* MessageHelper.swift */; };
+		FD208BC92A977BA600519DE9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC82A977BA600519DE9 /* APIError.swift */; };
+		FD208BCD2A9786A100519DE9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BCC2A9786A100519DE9 /* DataManager.swift */; };
+		FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80A2A8E40C00020D9D5 /* Colors.swift */; };
+		FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */; };
+		FD990DB72A8A6877000065E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DB62A8A6877000065E8 /* AppDelegate.swift */; };
+		FD990DB92A8A6877000065E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DB82A8A6877000065E8 /* SceneDelegate.swift */; };
+		FD990DBB2A8A6877000065E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DBA2A8A6877000065E8 /* ViewController.swift */; };
+		FD990DBE2A8A6877000065E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD990DBC2A8A6877000065E8 /* Main.storyboard */; };
+		FD990DC02A8A6878000065E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD990DBF2A8A6878000065E8 /* Assets.xcassets */; };
+		FD990DC32A8A6878000065E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD990DC12A8A6878000065E8 /* LaunchScreen.storyboard */; };
+		FD990DD92A8A6C1F000065E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DD82A8A6C1F000065E8 /* Constants.swift */; };
+		FD990DDB2A8A6C47000065E8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DDA2A8A6C47000065E8 /* CustomButton.swift */; };
+		FD990DDD2A8A6C60000065E8 /* CustomViewBackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DDC2A8A6C60000065E8 /* CustomViewBackgroundController.swift */; };
+		FD990DDF2A8A7592000065E8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DDE2A8A7592000065E8 /* CreateAccountViewController.swift */; };
+		FDBF10FD2A964FF100914A51 /* UpdateCredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBF10FC2A964FF100914A51 /* UpdateCredentialsViewController.swift */; };
+		FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA2112A8F52D8000DB44C /* TableViewCell.swift */; };
+		FDCBA2152A8F6809000DB44C /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA2142A8F6809000DB44C /* Pass.swift */; };
+		FDCBA2172A8F681A000DB44C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA2162A8F681A000DB44C /* User.swift */; };
+		FDCBA2192A8F6842000DB44C /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA2182A8F6842000DB44C /* Credential.swift */; };
+		FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */; };
+		FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21D2A8FA25B000DB44C /* AccountView.swift */; };
+		FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FD109A1F2A934A1200D8E0E1 /* FlashPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewModel.swift; sourceTree = "<group>"; };
+		FD208BAC2A97452800519DE9 /* PassAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassAccountView.swift; sourceTree = "<group>"; };
+		FD208BAE2A97472700519DE9 /* UserAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountView.swift; sourceTree = "<group>"; };
+		FD208BB02A9747A300519DE9 /* CredentialsAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsAccountView.swift; sourceTree = "<group>"; };
+		FD208BB52A975DAC00519DE9 /* PassesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewModel.swift; sourceTree = "<group>"; };
+		FD208BB72A976AA500519DE9 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		FD208BBA2A976B4500519DE9 /* CreateAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountRepository.swift; sourceTree = "<group>"; };
+		FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountUseCase.swift; sourceTree = "<group>"; };
+		FD208BBF2A97716A00519DE9 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		FD208BC22A97761B00519DE9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		FD208BC42A9777F600519DE9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		FD208BC62A977AC400519DE9 /* MessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
+		FD208BC82A977BA600519DE9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FD208BCC2A9786A100519DE9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FD48D80A2A8E40C00020D9D5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		FD990DB32A8A6877000065E8 /* DigitalPassaport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalPassaport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD990DB62A8A6877000065E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD990DB82A8A6877000065E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FD990DBA2A8A6877000065E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD990DBD2A8A6877000065E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD990DBF2A8A6878000065E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD990DC22A8A6878000065E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD990DC42A8A6878000065E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD990DD82A8A6C1F000065E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FD990DDA2A8A6C47000065E8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		FD990DDC2A8A6C60000065E8 /* CustomViewBackgroundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBackgroundController.swift; sourceTree = "<group>"; };
+		FD990DDE2A8A7592000065E8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		FDBF10FC2A964FF100914A51 /* UpdateCredentialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsViewController.swift; sourceTree = "<group>"; };
+		FDCBA2112A8F52D8000DB44C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FDCBA2142A8F6809000DB44C /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
+		FDCBA2162A8F681A000DB44C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FDCBA2182A8F6842000DB44C /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewController.swift; sourceTree = "<group>"; };
+		FDCBA21D2A8FA25B000DB44C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD990DB02A8A6877000065E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD109A232A93609F00D8E0E1 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD208BB32A975D6D00519DE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BB52A975DAC00519DE9 /* PassesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD208BB42A975D8900519DE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD109A1F2A934A1200D8E0E1 /* FlashPassViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD208BB92A976AF300519DE9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BBA2A976B4500519DE9 /* CreateAccountRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FD208BBC2A976C2000519DE9 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FD208BC12A97760A00519DE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BC22A97761B00519DE9 /* AccountResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD208BCA2A97865900519DE9 /* Epics */ = {
+			isa = PBXGroup;
+			children = (
+				FD990DCE2A8A6989000065E8 /* FlashPass */,
+				FD990DCF2A8A699A000065E8 /* UpdateCredentials */,
+				FD990DCB2A8A6956000065E8 /* CreateAccount */,
+				FD990DD02A8A69A6000065E8 /* PassesList */,
+			);
+			path = Epics;
+			sourceTree = "<group>";
+		};
+		FD208BCB2A97867200519DE9 /* DataManagment */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BCC2A9786A100519DE9 /* DataManager.swift */,
+			);
+			path = DataManagment;
+			sourceTree = "<group>";
+		};
+		FD48D8082A8E40A00020D9D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD48D8092A8E40A70020D9D5 /* Colors */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FD48D8092A8E40A70020D9D5 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				FD48D80A2A8E40C00020D9D5 /* Colors.swift */,
+				FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		FD990DAA2A8A6877000065E8 = {
+			isa = PBXGroup;
+			children = (
+				FD990DB52A8A6877000065E8 /* DigitalPassaport */,
+				FD990DB42A8A6877000065E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD990DB42A8A6877000065E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD990DB32A8A6877000065E8 /* DigitalPassaport.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD990DB52A8A6877000065E8 /* DigitalPassaport */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BCB2A97867200519DE9 /* DataManagment */,
+				FD208BCA2A97865900519DE9 /* Epics */,
+				FDCBA2132A8F67F5000DB44C /* Models */,
+				FD48D8082A8E40A00020D9D5 /* Resources */,
+				FD990DD62A8A6BFA000065E8 /* Utilities */,
+				FD990DD12A8A69C0000065E8 /* Infactuture */,
+				FD990DB62A8A6877000065E8 /* AppDelegate.swift */,
+				FD990DB82A8A6877000065E8 /* SceneDelegate.swift */,
+				FD990DBA2A8A6877000065E8 /* ViewController.swift */,
+				FD990DBF2A8A6878000065E8 /* Assets.xcassets */,
+				FD990DC12A8A6878000065E8 /* LaunchScreen.storyboard */,
+				FD990DC42A8A6878000065E8 /* Info.plist */,
+			);
+			path = DigitalPassaport;
+			sourceTree = "<group>";
+		};
+		FD990DCA2A8A6949000065E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FD990DBC2A8A6877000065E8 /* Main.storyboard */,
+				FD990DDE2A8A7592000065E8 /* CreateAccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD990DCB2A8A6956000065E8 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BC12A97760A00519DE9 /* Model */,
+				FD208BBC2A976C2000519DE9 /* UseCase */,
+				FD208BB92A976AF300519DE9 /* Repository */,
+				FD990DCC2A8A696D000065E8 /* ViewModel */,
+				FD990DCA2A8A6949000065E8 /* View */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		FD990DCC2A8A696D000065E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BB72A976AA500519DE9 /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD990DCE2A8A6989000065E8 /* FlashPass */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BB42A975D8900519DE9 /* ViewModel */,
+				FDCBA21A2A8F94BF000DB44C /* View */,
+			);
+			path = FlashPass;
+			sourceTree = "<group>";
+		};
+		FD990DCF2A8A699A000065E8 /* UpdateCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				FDBF10FB2A964FD900914A51 /* View */,
+			);
+			path = UpdateCredentials;
+			sourceTree = "<group>";
+		};
+		FD990DD02A8A69A6000065E8 /* PassesList */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BB32A975D6D00519DE9 /* ViewModel */,
+				FDED02812A8B6AFA001C9E65 /* View */,
+			);
+			path = PassesList;
+			sourceTree = "<group>";
+		};
+		FD990DD12A8A69C0000065E8 /* Infactuture */ = {
+			isa = PBXGroup;
+			children = (
+				FD990DD32A8A69D5000065E8 /* APIEndpoints */,
+				FD990DD22A8A69CD000065E8 /* Networking */,
+			);
+			path = Infactuture;
+			sourceTree = "<group>";
+		};
+		FD990DD22A8A69CD000065E8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BBF2A97716A00519DE9 /* NetworkingService.swift */,
+				FD208BC82A977BA600519DE9 /* APIError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FD990DD32A8A69D5000065E8 /* APIEndpoints */ = {
+			isa = PBXGroup;
+			children = (
+				FD208BC42A9777F600519DE9 /* APIEndpoints.swift */,
+			);
+			path = APIEndpoints;
+			sourceTree = "<group>";
+		};
+		FD990DD62A8A6BFA000065E8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FD990DD72A8A6C08000065E8 /* CustomViews */,
+				FD990DD82A8A6C1F000065E8 /* Constants.swift */,
+				FD208BC62A977AC400519DE9 /* MessageHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FD990DD72A8A6C08000065E8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FD990DDA2A8A6C47000065E8 /* CustomButton.swift */,
+				FD990DDC2A8A6C60000065E8 /* CustomViewBackgroundController.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FDBF10FB2A964FD900914A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDBF10FC2A964FF100914A51 /* UpdateCredentialsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDCBA2102A8F52BC000DB44C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FDCBA2112A8F52D8000DB44C /* TableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FDCBA2132A8F67F5000DB44C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDCBA2142A8F6809000DB44C /* Pass.swift */,
+				FDCBA2162A8F681A000DB44C /* User.swift */,
+				FDCBA2182A8F6842000DB44C /* Credential.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FDCBA21A2A8F94BF000DB44C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */,
+				FDCBA21D2A8FA25B000DB44C /* AccountView.swift */,
+				FD208BAC2A97452800519DE9 /* PassAccountView.swift */,
+				FD208BAE2A97472700519DE9 /* UserAccountView.swift */,
+				FD208BB02A9747A300519DE9 /* CredentialsAccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDED02812A8B6AFA001C9E65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCBA2102A8F52BC000DB44C /* Cell */,
+				FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD990DB22A8A6877000065E8 /* DigitalPassaport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD990DC72A8A6878000065E8 /* Build configuration list for PBXNativeTarget "DigitalPassaport" */;
+			buildPhases = (
+				FD990DAF2A8A6877000065E8 /* Sources */,
+				FD990DB02A8A6877000065E8 /* Frameworks */,
+				FD990DB12A8A6877000065E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DigitalPassaport;
+			packageProductDependencies = (
+				FD109A222A93609F00D8E0E1 /* Alamofire */,
+			);
+			productName = DigitalPassaport;
+			productReference = FD990DB32A8A6877000065E8 /* DigitalPassaport.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD990DAB2A8A6877000065E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FD990DB22A8A6877000065E8 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FD990DAE2A8A6877000065E8 /* Build configuration list for PBXProject "DigitalPassaport" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD990DAA2A8A6877000065E8;
+			packageReferences = (
+				FD109A212A93609F00D8E0E1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = FD990DB42A8A6877000065E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD990DB22A8A6877000065E8 /* DigitalPassaport */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD990DB12A8A6877000065E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD990DC32A8A6878000065E8 /* LaunchScreen.storyboard in Resources */,
+				FD990DC02A8A6878000065E8 /* Assets.xcassets in Resources */,
+				FD990DBE2A8A6877000065E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD990DAF2A8A6877000065E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCBA2172A8F681A000DB44C /* User.swift in Sources */,
+				FD990DD92A8A6C1F000065E8 /* Constants.swift in Sources */,
+				FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */,
+				FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */,
+				FD208BAF2A97472700519DE9 /* UserAccountView.swift in Sources */,
+				FD109A202A934A1200D8E0E1 /* FlashPassViewModel.swift in Sources */,
+				FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */,
+				FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */,
+				FD208BB62A975DAC00519DE9 /* PassesListViewModel.swift in Sources */,
+				FD208BAD2A97452800519DE9 /* PassAccountView.swift in Sources */,
+				FD990DBB2A8A6877000065E8 /* ViewController.swift in Sources */,
+				FD208BC02A97716A00519DE9 /* NetworkingService.swift in Sources */,
+				FD990DDB2A8A6C47000065E8 /* CustomButton.swift in Sources */,
+				FDCBA2152A8F6809000DB44C /* Pass.swift in Sources */,
+				FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */,
+				FD208BC52A9777F600519DE9 /* APIEndpoints.swift in Sources */,
+				FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */,
+				FD208BCD2A9786A100519DE9 /* DataManager.swift in Sources */,
+				FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */,
+				FD208BB12A9747A300519DE9 /* CredentialsAccountView.swift in Sources */,
+				FDCBA2192A8F6842000DB44C /* Credential.swift in Sources */,
+				FD990DB72A8A6877000065E8 /* AppDelegate.swift in Sources */,
+				FD208BBB2A976B4500519DE9 /* CreateAccountRepository.swift in Sources */,
+				FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */,
+				FD208BC92A977BA600519DE9 /* APIError.swift in Sources */,
+				FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */,
+				FD990DDF2A8A7592000065E8 /* CreateAccountViewController.swift in Sources */,
+				FD990DB92A8A6877000065E8 /* SceneDelegate.swift in Sources */,
+				FD208BB82A976AA500519DE9 /* CreateAccountViewModel.swift in Sources */,
+				FDBF10FD2A964FF100914A51 /* UpdateCredentialsViewController.swift in Sources */,
+				FD990DDD2A8A6C60000065E8 /* CustomViewBackgroundController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FD990DBC2A8A6877000065E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD990DBD2A8A6877000065E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD990DC12A8A6878000065E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD990DC22A8A6878000065E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD990DC52A8A6878000065E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD990DC62A8A6878000065E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD990DC82A8A6878000065E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigitalPassaport/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vegait.DigitalPassaport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD990DC92A8A6878000065E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigitalPassaport/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vegait.DigitalPassaport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD990DAE2A8A6877000065E8 /* Build configuration list for PBXProject "DigitalPassaport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD990DC52A8A6878000065E8 /* Debug */,
+				FD990DC62A8A6878000065E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD990DC72A8A6878000065E8 /* Build configuration list for PBXNativeTarget "DigitalPassaport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD990DC82A8A6878000065E8 /* Debug */,
+				FD990DC92A8A6878000065E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD109A212A93609F00D8E0E1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD109A222A93609F00D8E0E1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD109A212A93609F00D8E0E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FD990DAB2A8A6877000065E8 /* Project object */;
+}
