@@ -75,7 +75,7 @@ class PassesListViewController: UIViewController {
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10).isActive = true

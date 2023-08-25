@@ -10,7 +10,7 @@ import Combine
 import Alamofire
 
 protocol CreateAccountRepositoryType {
-    func triggerApi()
+    func triggerApi(completion: @escaping (Bool) -> Void)
 }
 
 class CreateAccountRepository: CreateAccountRepositoryType {
@@ -24,12 +24,18 @@ class CreateAccountRepository: CreateAccountRepositoryType {
         self.networkingService = networkingService
     }
 
-    func triggerApi() {
+    func triggerApi(completion: @escaping (Bool) -> Void) {
         let url = URL(string: APIEndpoints.account)!
         networkingService.post(url, parameters: [:])
-            .sink(receiveCompletion: { completion in
-                // Handle completion if needed
-            }, receiveValue: { [weak self] data in
+            .sink(receiveCompletion: { receiveCompletion in
+                switch receiveCompletion {
+                    case .finished:
+                        completion(true)
+                          case .failure(let error):
+                        print(APIError.noNetwork)
+                              completion(false)
+                          }
+            }, receiveValue: { data in
                 do {
                     let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                     if let jsonDictionary = jsonObject as? [String: Any] {
@@ -57,8 +63,7 @@ class CreateAccountRepository: CreateAccountRepositoryType {
                         }
                     }
                 } catch {
-                    // Handle decoding error
-                    print("Decoding error: \(error)")
+                    print("Decoding error: \(APIError.decodeError(error.localizedDescription))")
                 }
             })
             .store(in: &cancellables)

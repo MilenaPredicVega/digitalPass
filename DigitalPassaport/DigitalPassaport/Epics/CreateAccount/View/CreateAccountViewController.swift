@@ -20,7 +20,16 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountAction(_ sender: UIButton) {
-        viewModel.createAccountButtonTapped()
-        navigationController?.pushViewController(PassesListViewController(viewModel: PassesListViewModel()), animated: true)
+        viewModel.createAccountButtonTapped { success in
+            if success {
+                DispatchQueue.main.async {
+                    let passesListViewModel = PassesListViewModel()
+                    let passesListViewController = PassesListViewController(viewModel: passesListViewModel)
+                    self.navigationController?.pushViewController(passesListViewController, animated: true)
+                }
+            } else {
+                APIAlerts.showAPIErrorAlert(on: self)
+            }
+        }
     }
 }

@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  DigitalPassaport
+
+  Created by Milena Predic on 25.8.23..
+  
+*/
+
+// buttons
+"create account" = "Create account";
+"update credentials" = "Update credentials";
+"update time credentials" = "Update time credentials";
+"update ready credentials" = "Update ready credentials";
+
+// titles
+"passes" = "Passes";
+
+// labels
+"Time expiration" = "Time expiration:";
+"Ready expiration" = "Ready expiration:";
+
+// alerts messages
+"error title" = "Error";
+"server error" = "Server Error occurs. Please try again.";
+

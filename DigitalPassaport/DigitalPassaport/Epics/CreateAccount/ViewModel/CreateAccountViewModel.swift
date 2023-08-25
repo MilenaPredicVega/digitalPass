@@ -16,7 +16,7 @@ class CreateAccountViewModel {
         self.repository = repository
     }
     
-    func createAccountButtonTapped() {
-        repository.triggerApi()
+    func createAccountButtonTapped(completion: @escaping (Bool) -> Void) {
+        repository.triggerApi(completion: completion)
     }
 }

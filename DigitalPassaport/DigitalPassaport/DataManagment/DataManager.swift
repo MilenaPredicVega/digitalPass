@@ -17,9 +17,7 @@ class DataManager {
         do {
             let data = try JSONEncoder().encode(passes)
             userDefaults.set(data, forKey: "passes")
-            print("Passes saved to UserDefaults: \(passes)")
         } catch {
-            print("Error saving passes: \(error)")
         }
     }
     
