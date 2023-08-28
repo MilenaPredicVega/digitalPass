@@ -8,7 +8,6 @@
 import Foundation
 
 struct MessageHelper {
-    
     struct serverError {
         static let general : String = "Bad Request"
         static let noInternet : String = "Check the Connection"

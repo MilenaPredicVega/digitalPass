@@ -10,9 +10,10 @@ import Foundation
 
 class PassesListViewModel {
     @Published var passes: [Pass]
+    private var repository: PassesListRepository
     
-    init() {
-        self.passes = DataManager.shared.getPasses()
+    init(passesListRepository: PassesListRepository) {
+        self.repository = passesListRepository
+        self.passes = repository.getPasses()
     }
-
 }

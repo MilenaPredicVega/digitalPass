@@ -10,11 +10,12 @@ import Combine
 class FlashPassViewModel {
     @Published var selectedPass: Pass
     @Published var user: User
+    private var repository: FlashPassRepository
     
-    init(selectedPass: Pass, user: User) {
+    
+    init(selectedPass: Pass, repository: FlashPassRepository) {
+        self.repository = repository
         self.selectedPass = selectedPass
-        self.user = DataManager.shared.getUser()!
+        self.user = self.repository.getUser()
     }
 }
-
-

@@ -17,9 +17,9 @@ class PassesListViewController: UIViewController {
 // MARK: UI Components
     private var label: UILabel = {
         let label = UILabel()
-        label.text = ""
-        label.font.withSize(10)
-        label.textColor = .black
+        label.text = NSLocalizedString("passes", comment: "")
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textColor = .white
         return label
     }()
     
@@ -68,18 +68,26 @@ class PassesListViewController: UIViewController {
         self.view.backgroundColor = UIColor.backround
         self.navigationItem.hidesBackButton = true
         
-        self.view.addSubview(tableView)
         self.view.addSubview(label)
+        self.view.addSubview(tableView)
+      
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
+        tableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+<<<<<<< Updated upstream
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10).isActive = true
         label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
+=======
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+>>>>>>> Stashed changes
     }
 }
 
@@ -106,15 +114,10 @@ extension PassesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         let selectedPass = passes[indexPath.row]
-        var image = UIImage(systemName: "heart.fill")
-        let user = User(firstName: "Milena", lastName: "Predic", email: "", image: "")
-        let flashPassViewController = FlashPassViewController(viewModel: FlashPassViewModel(selectedPass: selectedPass, user: user))
-        flashPassViewController.selectedPass = selectedPass
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let flashPassViewController = FlashPassViewController(viewModel: FlashPassViewModel(selectedPass: selectedPass, repository: FlashPassRepositoryImpl(coreDataManager: appDelegate.coreDataManager)))
         navigationController?.pushViewController(flashPassViewController, animated: false)
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
 }
-
-
-

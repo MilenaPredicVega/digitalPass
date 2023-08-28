@@ -12,7 +12,7 @@ enum APIError : Error {
     case timeout
     case pageNotFound
     case noData
-    case noNetwork
+    case networkError(error: String)
     case unknownError
     case serverError
     case statusMessage(message : String)
@@ -27,7 +27,7 @@ extension APIError {
         case .timeout:                    return MessageHelper.serverError.timeOut
         case .pageNotFound:               return MessageHelper.serverError.notFound
         case .noData:                     return MessageHelper.serverError.notFound
-        case .noNetwork:                  return MessageHelper.serverError.noInternet
+        case .networkError(let error):    return error
         case .unknownError:               return MessageHelper.serverError.general
         case .serverError:                return MessageHelper.serverError.serverError
         case .statusMessage(let message): return message

@@ -7,23 +7,28 @@
 
 import Foundation
 import Combine
-import Alamofire
+import CoreData
 
+<<<<<<< Updated upstream
 protocol CreateAccountRepositoryType {
     func triggerApi()
+=======
+protocol CreateAccountRepository {
+    func fetchData(parameters: APIRequestParameters?) -> AnyPublisher<AccountResponse, Error>
+>>>>>>> Stashed changes
 }
 
-class CreateAccountRepository: CreateAccountRepositoryType {
+class CreateAccountRepositoryImp: CreateAccountRepository {
     
     private let networkingService: NetworkingService
-    private var passes: [Pass] = []
-    private var user: User?
-    private var cancellables: Set<AnyCancellable> = []
+    private let coreDataManager: CoreDataManager
     
-    init(networkingService: NetworkingService) {
+    init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
         self.networkingService = networkingService
+        self.coreDataManager = coreDataManager
     }
 
+<<<<<<< Updated upstream
     func triggerApi() {
         let url = URL(string: APIEndpoints.account)!
         networkingService.post(url, parameters: [:])
@@ -86,5 +91,21 @@ struct DynamicCodingKey: CodingKey {
 
     static func key(named name: String) -> DynamicCodingKey {
         return DynamicCodingKey(stringValue: name) ?? DynamicCodingKey(intValue: 0)!
+=======
+    func fetchData(parameters: APIRequestParameters?) -> AnyPublisher<AccountResponse, Error> {
+        let url = URL(string: APIEndpoints.account)!
+        
+        return networkingService.post(url: url, parameters: parameters)
+            .mapError { error -> Error in
+                return error
+            }
+            .tryMap { accountResponse -> AccountResponse in
+                print("tesst")
+                self.coreDataManager.saveAccountResponse(accountResponse)
+                return accountResponse
+            }
+            .eraseToAnyPublisher()
+>>>>>>> Stashed changes
     }
 }
+
