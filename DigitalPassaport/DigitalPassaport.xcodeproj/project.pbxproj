@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
+=======
+		FD01486E2A989D860055E47D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD01486D2A989D860055E47D /* Localizable.strings */; };
+		FD0148712A98A7720055E47D /* PassesListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0148702A98A7720055E47D /* PassesListRepository.swift */; };
+		FD0148732A98A7AB0055E47D /* DynamicCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0148722A98A7AB0055E47D /* DynamicCodingKey.swift */; };
+		FD0148772A98EF300055E47D /* APIRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0148762A98EF300055E47D /* APIRequestParameters.swift */; };
+>>>>>>> Stashed changes
 		FD109A202A934A1200D8E0E1 /* FlashPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD109A1F2A934A1200D8E0E1 /* FlashPassViewModel.swift */; };
 		FD109A232A93609F00D8E0E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FD109A222A93609F00D8E0E1 /* Alamofire */; };
 		FD208BAD2A97452800519DE9 /* PassAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BAC2A97452800519DE9 /* PassAccountView.swift */; };
@@ -21,7 +28,6 @@
 		FD208BC52A9777F600519DE9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC42A9777F600519DE9 /* APIEndpoints.swift */; };
 		FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC62A977AC400519DE9 /* MessageHelper.swift */; };
 		FD208BC92A977BA600519DE9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC82A977BA600519DE9 /* APIError.swift */; };
-		FD208BCD2A9786A100519DE9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BCC2A9786A100519DE9 /* DataManager.swift */; };
 		FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80A2A8E40C00020D9D5 /* Colors.swift */; };
 		FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */; };
 		FD990DB72A8A6877000065E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DB62A8A6877000065E8 /* AppDelegate.swift */; };
@@ -41,10 +47,27 @@
 		FDCBA2192A8F6842000DB44C /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA2182A8F6842000DB44C /* Credential.swift */; };
 		FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */; };
 		FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21D2A8FA25B000DB44C /* AccountView.swift */; };
+		FDE204502A9C8FF000CE8D09 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDE2044E2A9C8FF000CE8D09 /* DataModel.xcdatamodeld */; };
+		FDE2046E2A9CB00800CE8D09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2046D2A9CB00800CE8D09 /* CoreDataManager.swift */; };
+		FDE204732A9CC04700CE8D09 /* UserCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2046F2A9CC04700CE8D09 /* UserCD+CoreDataClass.swift */; };
+		FDE204742A9CC04700CE8D09 /* UserCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE204702A9CC04700CE8D09 /* UserCD+CoreDataProperties.swift */; };
+		FDE204752A9CC04700CE8D09 /* PassEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE204712A9CC04700CE8D09 /* PassEntity+CoreDataClass.swift */; };
+		FDE204762A9CC04700CE8D09 /* PassEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE204722A9CC04700CE8D09 /* PassEntity+CoreDataProperties.swift */; };
+		FDE204792A9CC58F00CE8D09 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE204782A9CC58F00CE8D09 /* DataMapper.swift */; };
+		FDE2047C2A9CE36600CE8D09 /* FlashPassRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2047B2A9CE36600CE8D09 /* FlashPassRepository.swift */; };
 		FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
+=======
+		FD01486A2A989D430055E47D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD01486B2A989D430055E47D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD01486D2A989D860055E47D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FD0148702A98A7720055E47D /* PassesListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListRepository.swift; sourceTree = "<group>"; };
+		FD0148722A98A7AB0055E47D /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
+		FD0148762A98EF300055E47D /* APIRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestParameters.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		FD109A1F2A934A1200D8E0E1 /* FlashPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewModel.swift; sourceTree = "<group>"; };
 		FD208BAC2A97452800519DE9 /* PassAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassAccountView.swift; sourceTree = "<group>"; };
 		FD208BAE2A97472700519DE9 /* UserAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountView.swift; sourceTree = "<group>"; };
@@ -58,7 +81,6 @@
 		FD208BC42A9777F600519DE9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		FD208BC62A977AC400519DE9 /* MessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		FD208BC82A977BA600519DE9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		FD208BCC2A9786A100519DE9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FD48D80A2A8E40C00020D9D5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FD990DB32A8A6877000065E8 /* DigitalPassaport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalPassaport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +102,14 @@
 		FDCBA2182A8F6842000DB44C /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewController.swift; sourceTree = "<group>"; };
 		FDCBA21D2A8FA25B000DB44C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		FDE2044F2A9C8FF000CE8D09 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		FDE2046D2A9CB00800CE8D09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FDE2046F2A9CC04700CE8D09 /* UserCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDE204702A9CC04700CE8D09 /* UserCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDE204712A9CC04700CE8D09 /* PassEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDE204722A9CC04700CE8D09 /* PassEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDE204782A9CC58F00CE8D09 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		FDE2047B2A9CE36600CE8D09 /* FlashPassRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassRepository.swift; sourceTree = "<group>"; };
 		FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +125,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< Updated upstream
+=======
+		FD01486C2A989D690055E47D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FD01486D2A989D860055E47D /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		FD01486F2A98A7570055E47D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FD0148702A98A7720055E47D /* PassesListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		FD208BB32A975D6D00519DE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +198,8 @@
 		FD208BCB2A97867200519DE9 /* DataManagment */ = {
 			isa = PBXGroup;
 			children = (
-				FD208BCC2A9786A100519DE9 /* DataManager.swift */,
+				FDE204772A9CC53200CE8D09 /* CoreData */,
+				FDE204782A9CC58F00CE8D09 /* DataMapper.swift */,
 			);
 			path = DataManagment;
 			sourceTree = "<group>";
@@ -238,6 +288,7 @@
 		FD990DCE2A8A6989000065E8 /* FlashPass */ = {
 			isa = PBXGroup;
 			children = (
+				FDE2047A2A9CE35500CE8D09 /* Repository */,
 				FD208BB42A975D8900519DE9 /* ViewModel */,
 				FDCBA21A2A8F94BF000DB44C /* View */,
 			);
@@ -255,6 +306,7 @@
 		FD990DD02A8A69A6000065E8 /* PassesList */ = {
 			isa = PBXGroup;
 			children = (
+				FD01486F2A98A7570055E47D /* Repository */,
 				FD208BB32A975D6D00519DE9 /* ViewModel */,
 				FDED02812A8B6AFA001C9E65 /* View */,
 			);
@@ -264,7 +316,7 @@
 		FD990DD12A8A69C0000065E8 /* Infactuture */ = {
 			isa = PBXGroup;
 			children = (
-				FD990DD32A8A69D5000065E8 /* APIEndpoints */,
+				FD990DD32A8A69D5000065E8 /* Resources */,
 				FD990DD22A8A69CD000065E8 /* Networking */,
 			);
 			path = Infactuture;
@@ -279,12 +331,13 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		FD990DD32A8A69D5000065E8 /* APIEndpoints */ = {
+		FD990DD32A8A69D5000065E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				FD208BC42A9777F600519DE9 /* APIEndpoints.swift */,
+				FD0148762A98EF300055E47D /* APIRequestParameters.swift */,
 			);
-			path = APIEndpoints;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FD990DD62A8A6BFA000065E8 /* Utilities */ = {
@@ -293,6 +346,7 @@
 				FD990DD72A8A6C08000065E8 /* CustomViews */,
 				FD990DD82A8A6C1F000065E8 /* Constants.swift */,
 				FD208BC62A977AC400519DE9 /* MessageHelper.swift */,
+				FD0148722A98A7AB0055E47D /* DynamicCodingKey.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -342,6 +396,27 @@
 				FD208BB02A9747A300519DE9 /* CredentialsAccountView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FDE204772A9CC53200CE8D09 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2046D2A9CB00800CE8D09 /* CoreDataManager.swift */,
+				FDE2044E2A9C8FF000CE8D09 /* DataModel.xcdatamodeld */,
+				FDE204722A9CC04700CE8D09 /* PassEntity+CoreDataProperties.swift */,
+				FDE204712A9CC04700CE8D09 /* PassEntity+CoreDataClass.swift */,
+				FDE2046F2A9CC04700CE8D09 /* UserCD+CoreDataClass.swift */,
+				FDE204702A9CC04700CE8D09 /* UserCD+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FDE2047A2A9CE35500CE8D09 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2047B2A9CE36600CE8D09 /* FlashPassRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		FDED02812A8B6AFA001C9E65 /* View */ = {
@@ -430,9 +505,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0148712A98A7720055E47D /* PassesListRepository.swift in Sources */,
 				FDCBA2172A8F681A000DB44C /* User.swift in Sources */,
 				FD990DD92A8A6C1F000065E8 /* Constants.swift in Sources */,
 				FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */,
+				FDE2047C2A9CE36600CE8D09 /* FlashPassRepository.swift in Sources */,
 				FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */,
 				FD208BAF2A97472700519DE9 /* UserAccountView.swift in Sources */,
 				FD109A202A934A1200D8E0E1 /* FlashPassViewModel.swift in Sources */,
@@ -447,19 +524,27 @@
 				FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */,
 				FD208BC52A9777F600519DE9 /* APIEndpoints.swift in Sources */,
 				FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */,
-				FD208BCD2A9786A100519DE9 /* DataManager.swift in Sources */,
+				FD0148772A98EF300055E47D /* APIRequestParameters.swift in Sources */,
 				FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */,
 				FD208BB12A9747A300519DE9 /* CredentialsAccountView.swift in Sources */,
+				FDE204752A9CC04700CE8D09 /* PassEntity+CoreDataClass.swift in Sources */,
+				FD0148732A98A7AB0055E47D /* DynamicCodingKey.swift in Sources */,
 				FDCBA2192A8F6842000DB44C /* Credential.swift in Sources */,
 				FD990DB72A8A6877000065E8 /* AppDelegate.swift in Sources */,
 				FD208BBB2A976B4500519DE9 /* CreateAccountRepository.swift in Sources */,
+				FDE204792A9CC58F00CE8D09 /* DataMapper.swift in Sources */,
 				FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */,
 				FD208BC92A977BA600519DE9 /* APIError.swift in Sources */,
 				FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */,
+				FDE204732A9CC04700CE8D09 /* UserCD+CoreDataClass.swift in Sources */,
 				FD990DDF2A8A7592000065E8 /* CreateAccountViewController.swift in Sources */,
 				FD990DB92A8A6877000065E8 /* SceneDelegate.swift in Sources */,
+				FDE2046E2A9CB00800CE8D09 /* CoreDataManager.swift in Sources */,
 				FD208BB82A976AA500519DE9 /* CreateAccountViewModel.swift in Sources */,
+				FDE204502A9C8FF000CE8D09 /* DataModel.xcdatamodeld in Sources */,
+				FDE204742A9CC04700CE8D09 /* UserCD+CoreDataProperties.swift in Sources */,
 				FDBF10FD2A964FF100914A51 /* UpdateCredentialsViewController.swift in Sources */,
+				FDE204762A9CC04700CE8D09 /* PassEntity+CoreDataProperties.swift in Sources */,
 				FD990DDD2A8A6C60000065E8 /* CustomViewBackgroundController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +780,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FDE2044E2A9C8FF000CE8D09 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FDE2044F2A9C8FF000CE8D09 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = FDE2044F2A9C8FF000CE8D09 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FD990DAB2A8A6877000065E8 /* Project object */;
 }
