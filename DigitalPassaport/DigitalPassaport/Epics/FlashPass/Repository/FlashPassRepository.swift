@@ -19,10 +19,7 @@ class FlashPassRepositoryImpl: FlashPassRepository {
     }
     
     func getUser() -> User {
-        let userCD = coreDataManager.fetchUser()
-        let user = userCD.map { userCD in
-            return DataMapper.mapUser(userCD: userCD)
-        }
+        let user = coreDataManager.fetchUser()
         return user!
         // TODO: avoid force unwraping
     }

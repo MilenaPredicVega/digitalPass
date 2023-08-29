@@ -20,10 +20,7 @@ class PassesListRepositoryImpl: PassesListRepository {
     }
     
     func getPasses() -> [Pass] {
-        let passItemCDs = coreDataManager.fetchPasses()
-        let passes = passItemCDs.map { passItemCD in
-            return DataMapper.mapPass(passItemCD: passItemCD)
-        }
+        let passes = coreDataManager.fetchPasses()
         return passes
     }
 }

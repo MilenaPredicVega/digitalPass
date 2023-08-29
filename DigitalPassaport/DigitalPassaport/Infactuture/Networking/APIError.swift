@@ -8,11 +8,8 @@
 import Foundation
 
 enum APIError : Error {
-    case general
-    case timeout
-    case pageNotFound
     case noData
-    case noNetwork
+    case noNetwork(String)
     case unknownError
     case serverError
     case statusMessage(message : String)
@@ -23,11 +20,8 @@ extension APIError {
     var desc: String {
         
         switch self {
-        case .general:                    return MessageHelper.serverError.general
-        case .timeout:                    return MessageHelper.serverError.timeOut
-        case .pageNotFound:               return MessageHelper.serverError.notFound
         case .noData:                     return MessageHelper.serverError.notFound
-        case .noNetwork:                  return MessageHelper.serverError.noInternet
+        case .noNetwork(let error):                  return error
         case .unknownError:               return MessageHelper.serverError.general
         case .serverError:                return MessageHelper.serverError.serverError
         case .statusMessage(let message): return message

@@ -17,10 +17,8 @@
 		FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */; };
 		FD208BC02A97716A00519DE9 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBF2A97716A00519DE9 /* NetworkingService.swift */; };
 		FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC22A97761B00519DE9 /* AccountResponse.swift */; };
-		FD208BC52A9777F600519DE9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC42A9777F600519DE9 /* APIEndpoints.swift */; };
 		FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC62A977AC400519DE9 /* MessageHelper.swift */; };
 		FD208BC92A977BA600519DE9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BC82A977BA600519DE9 /* APIError.swift */; };
-		FD2A39782A9DD919006EE644 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39752A9DD919006EE644 /* DataMapper.swift */; };
 		FD2A397C2A9DD9B5006EE644 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD2A397A2A9DD9B5006EE644 /* DataModel.xcdatamodeld */; };
 		FD2A397F2A9DDA59006EE644 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A397E2A9DDA59006EE644 /* CoreDataManager.swift */; };
 		FD2A39912A9DE2C3006EE644 /* APIRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39902A9DE2C3006EE644 /* APIRequestParameters.swift */; };
@@ -33,6 +31,15 @@
 		FD2A39A62A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */; };
 		FD2A39A72A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */; };
 		FD2A39A82A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A42A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift */; };
+		FD2A39AC2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39AB2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift */; };
+		FD2A39AE2A9DED0C006EE644 /* UpdateCredentialsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39AD2A9DED0C006EE644 /* UpdateCredentialsRepository.swift */; };
+		FD2A39B12A9DEF25006EE644 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = FD2A39B02A9DEF25006EE644 /* JWTDecode */; };
+		FD2A39B42A9DF437006EE644 /* CredentialsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B32A9DF437006EE644 /* CredentialsResponse.swift */; };
+		FD2A39B62A9DFE8C006EE644 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B52A9DFE8C006EE644 /* NetworkManager.swift */; };
+		FD2A39BA2A9E088D006EE644 /* UserEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B92A9E088D006EE644 /* UserEntityMapper.swift */; };
+		FD2A39BC2A9E089C006EE644 /* PassEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39BB2A9E089C006EE644 /* PassEntityMapper.swift */; };
+		FD2A39BE2A9E08A7006EE644 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39BD2A9E08A7006EE644 /* UserMapper.swift */; };
+		FD2A39C02A9E08B5006EE644 /* PassMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39BF2A9E08B5006EE644 /* PassMapper.swift */; };
 		FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80A2A8E40C00020D9D5 /* Colors.swift */; };
 		FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */; };
 		FD990DB72A8A6877000065E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DB62A8A6877000065E8 /* AppDelegate.swift */; };
@@ -65,10 +72,8 @@
 		FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountUseCase.swift; sourceTree = "<group>"; };
 		FD208BBF2A97716A00519DE9 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		FD208BC22A97761B00519DE9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
-		FD208BC42A9777F600519DE9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		FD208BC62A977AC400519DE9 /* MessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		FD208BC82A977BA600519DE9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		FD2A39752A9DD919006EE644 /* DataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		FD2A397B2A9DD9B5006EE644 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		FD2A397E2A9DDA59006EE644 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD2A39902A9DE2C3006EE644 /* APIRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestParameters.swift; sourceTree = "<group>"; };
@@ -83,6 +88,14 @@
 		FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FD2A39A42A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FD2A39AB2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsViewModel.swift; sourceTree = "<group>"; };
+		FD2A39AD2A9DED0C006EE644 /* UpdateCredentialsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsRepository.swift; sourceTree = "<group>"; };
+		FD2A39B32A9DF437006EE644 /* CredentialsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsResponse.swift; sourceTree = "<group>"; };
+		FD2A39B52A9DFE8C006EE644 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FD2A39B92A9E088D006EE644 /* UserEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntityMapper.swift; sourceTree = "<group>"; };
+		FD2A39BB2A9E089C006EE644 /* PassEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassEntityMapper.swift; sourceTree = "<group>"; };
+		FD2A39BD2A9E08A7006EE644 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		FD2A39BF2A9E08B5006EE644 /* PassMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassMapper.swift; sourceTree = "<group>"; };
 		FD48D80A2A8E40C00020D9D5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FD990DB32A8A6877000065E8 /* DigitalPassaport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalPassaport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD2A39B12A9DEF25006EE644 /* JWTDecode in Frameworks */,
 				FD109A232A93609F00D8E0E1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,9 +185,8 @@
 		FD208BCB2A97867200519DE9 /* DataManagment */ = {
 			isa = PBXGroup;
 			children = (
+				FD2A39B82A9E0813006EE644 /* Mappers */,
 				FD2A397D2A9DDA33006EE644 /* CoreDataManagment */,
-				FD2A39752A9DD919006EE644 /* DataMapper.swift */,
-				FD2A397A2A9DD9B5006EE644 /* DataModel.xcdatamodeld */,
 			);
 			path = DataManagment;
 			sourceTree = "<group>";
@@ -181,6 +194,7 @@
 		FD2A397D2A9DDA33006EE644 /* CoreDataManagment */ = {
 			isa = PBXGroup;
 			children = (
+				FD2A397A2A9DD9B5006EE644 /* DataModel.xcdatamodeld */,
 				FD2A39A12A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift */,
 				FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */,
 				FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */,
@@ -212,6 +226,48 @@
 				FD2A399D2A9DE623006EE644 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		FD2A39A92A9DEC6C006EE644 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD2A39AB2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD2A39AA2A9DEC73006EE644 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FD2A39AD2A9DED0C006EE644 /* UpdateCredentialsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FD2A39B22A9DF421006EE644 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD2A39B32A9DF437006EE644 /* CredentialsResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD2A39B72A9E07D8006EE644 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FD2A39B82A9E0813006EE644 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				FD2A39B92A9E088D006EE644 /* UserEntityMapper.swift */,
+				FD2A39BB2A9E089C006EE644 /* PassEntityMapper.swift */,
+				FD2A39BD2A9E08A7006EE644 /* UserMapper.swift */,
+				FD2A39BF2A9E08B5006EE644 /* PassMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 		FD48D8082A8E40A00020D9D5 /* Resources */ = {
@@ -309,6 +365,9 @@
 		FD990DCF2A8A699A000065E8 /* UpdateCredentials */ = {
 			isa = PBXGroup;
 			children = (
+				FD2A39B22A9DF421006EE644 /* Model */,
+				FD2A39AA2A9DEC73006EE644 /* Repository */,
+				FD2A39A92A9DEC6C006EE644 /* ViewModel */,
 				FDBF10FB2A964FD900914A51 /* View */,
 			);
 			path = UpdateCredentials;
@@ -345,8 +404,8 @@
 		FD990DD32A8A69D5000065E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD208BC42A9777F600519DE9 /* APIEndpoints.swift */,
 				FD2A39902A9DE2C3006EE644 /* APIRequestParameters.swift */,
+				FD2A39B52A9DFE8C006EE644 /* NetworkManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -354,6 +413,7 @@
 		FD990DD62A8A6BFA000065E8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FD2A39B72A9E07D8006EE644 /* Data */,
 				FD990DD72A8A6C08000065E8 /* CustomViews */,
 				FD990DD82A8A6C1F000065E8 /* DynamicCodingKeys.swift */,
 				FD208BC62A977AC400519DE9 /* MessageHelper.swift */,
@@ -436,6 +496,7 @@
 			name = DigitalPassaport;
 			packageProductDependencies = (
 				FD109A222A93609F00D8E0E1 /* Alamofire */,
+				FD2A39B02A9DEF25006EE644 /* JWTDecode */,
 			);
 			productName = DigitalPassaport;
 			productReference = FD990DB32A8A6877000065E8 /* DigitalPassaport.app */;
@@ -466,6 +527,7 @@
 			mainGroup = FD990DAA2A8A6877000065E8;
 			packageReferences = (
 				FD109A212A93609F00D8E0E1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FD2A39AF2A9DEF25006EE644 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
 			);
 			productRefGroup = FD990DB42A8A6877000065E8 /* Products */;
 			projectDirPath = "";
@@ -504,16 +566,18 @@
 				FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */,
 				FD2A39A62A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift in Sources */,
 				FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */,
+				FD2A39B42A9DF437006EE644 /* CredentialsResponse.swift in Sources */,
 				FD208BB62A975DAC00519DE9 /* FlashPassViewModel.swift in Sources */,
+				FD2A39BC2A9E089C006EE644 /* PassEntityMapper.swift in Sources */,
 				FD208BAD2A97452800519DE9 /* PassAccountView.swift in Sources */,
 				FD990DBB2A8A6877000065E8 /* ViewController.swift in Sources */,
 				FD208BC02A97716A00519DE9 /* NetworkingService.swift in Sources */,
+				FD2A39BE2A9E08A7006EE644 /* UserMapper.swift in Sources */,
 				FD2A39A52A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift in Sources */,
+				FD2A39AC2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift in Sources */,
 				FD990DDB2A8A6C47000065E8 /* CustomButton.swift in Sources */,
 				FDCBA2152A8F6809000DB44C /* Pass.swift in Sources */,
 				FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */,
-				FD2A39782A9DD919006EE644 /* DataMapper.swift in Sources */,
-				FD208BC52A9777F600519DE9 /* APIEndpoints.swift in Sources */,
 				FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */,
 				FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */,
 				FD208BB12A9747A300519DE9 /* CredentialsAccountView.swift in Sources */,
@@ -529,9 +593,13 @@
 				FD2A39972A9DE4E0006EE644 /* PassesListRepository.swift in Sources */,
 				FD2A397C2A9DD9B5006EE644 /* DataModel.xcdatamodeld in Sources */,
 				FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */,
+				FD2A39BA2A9E088D006EE644 /* UserEntityMapper.swift in Sources */,
+				FD2A39B62A9DFE8C006EE644 /* NetworkManager.swift in Sources */,
 				FD990DDF2A8A7592000065E8 /* CreateAccountViewController.swift in Sources */,
 				FD2A39912A9DE2C3006EE644 /* APIRequestParameters.swift in Sources */,
 				FD990DB92A8A6877000065E8 /* SceneDelegate.swift in Sources */,
+				FD2A39AE2A9DED0C006EE644 /* UpdateCredentialsRepository.swift in Sources */,
+				FD2A39C02A9E08B5006EE644 /* PassMapper.swift in Sources */,
 				FD208BB82A976AA500519DE9 /* CreateAccountViewModel.swift in Sources */,
 				FDBF10FD2A964FF100914A51 /* UpdateCredentialsViewController.swift in Sources */,
 				FD990DDD2A8A6C60000065E8 /* CustomViewBackgroundController.swift in Sources */,
@@ -761,6 +829,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FD2A39AF2A9DEF25006EE644 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -768,6 +844,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FD109A212A93609F00D8E0E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FD2A39B02A9DEF25006EE644 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD2A39AF2A9DEF25006EE644 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;
+			productName = JWTDecode;
 		};
 /* End XCSwiftPackageProductDependency section */
 

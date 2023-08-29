@@ -18,7 +18,7 @@ class CreateAccountViewModel {
     }
     
     func createAccountButtonTapped(completion: @escaping (Bool) -> Void) {
-        repository.fetchData(parameters: nil)
+        repository.fetchData()
             .handleEvents(receiveOutput: { data in
                 
             }, receiveCompletion: { recievedCompletion in

@@ -15,61 +15,48 @@ class CoreDataManager {
         self.context = context
     }
     
-    func saveAccountResponse(_ accountResponse: AccountResponse) {
+    func saveUserFromResponse(_ accountResponse: AccountResponse) {
         context.perform {
-            let userItem = UserEntity(context: self.context)
-            userItem.firstName = accountResponse.user.firstName
-            userItem.lastName = accountResponse.user.lastName
-            userItem.image = accountResponse.user.image
-            userItem.email = accountResponse.user.email
-            
-            for pass in accountResponse.passes {
-                let passItem = PassEntity(context: self.context)
-                passItem.id = pass.id
-                passItem.name = pass.name
-                passItem.descriptionCD = pass.description
-                passItem.icon = pass.icon
-            
-                userItem.addToPasses(passItem)
-            }
-            do {
-                try self.context.save()
-            } catch {
-                print("Error saving data to Core Data: \(error)")
-            }
+            let userEntity = accountResponse.user.toEntity(in: self.context)
+        }
+        do {
+            try self.context.save()
+        } catch {
+            print("Error saving data to Core Data: \(error)")
         }
     }
     
-    func fetchPasses() -> [PassEntity] {
-        let fetchRequest: NSFetchRequest<PassEntity> = PassEntity.fetchRequest()
-        
+    func savePassFromResponse(_ accountResponse: AccountResponse) {
+        context.perform {
+            for pass in accountResponse.passes {
+                let passEntity = pass.toEntity(in: self.context)
+            }
+        }
         do {
-             let passes = try self.context.fetch(fetchRequest)
-             var uniquePasses: [PassEntity] = []
-             var uniquePassNames: Set<String> = []
-             
-             for pass in passes {
-                 if !uniquePassNames.contains(pass.name ?? "") {
-                     uniquePassNames.insert(pass.name ?? "")
-                     uniquePasses.append(pass)
-                 }
-             }
-             return uniquePasses
+            try self.context.save()
         } catch {
-            print("Error fetching passes: \(error)")
+            print("Error saving data to Core Data: \(error)")
+        }
+    }
+    
+    func fetchPasses() -> [Pass] {
+        let fetchRequest: NSFetchRequest<PassEntity> = PassEntity.fetchRequest()
+        do {
+            let passEntities = try context.fetch(fetchRequest)
+            return passEntities.map { $0.toPass() }
+        } catch {
+            print("Error fetching data from Core Data: \(error)")
             return []
         }
     }
     
-    func fetchUser() -> UserEntity? {
+    func fetchUser() -> User? {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-        fetchRequest.fetchLimit = 1
-
         do {
-            let users = try context.fetch(fetchRequest)
-            return users.first
+            let userEntities = try context.fetch(fetchRequest)
+            return userEntities.first?.toUser()
         } catch {
-            print("Error fetching user: \(error)")
+            print("Error fetching data from Core Data: \(error)")
             return nil
         }
     }
@@ -77,10 +64,10 @@ class CoreDataManager {
     func clearCoreData() {
         let fetchRequestUser: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserEntity")
         let fetchRequestPass: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PassEntity")
-
+        
         let deleteRequestUser = NSBatchDeleteRequest(fetchRequest: fetchRequestUser)
         let deleteRequestPass = NSBatchDeleteRequest(fetchRequest: fetchRequestPass)
-
+        
         do {
             try context.execute(deleteRequestUser)
             try context.execute(deleteRequestPass)

@@ -10,29 +10,26 @@ import Combine
 import Alamofire
 
 protocol CreateAccountRepository {
-    func fetchData(parameters: APIRequestParameters?) -> AnyPublisher<AccountResponse, Error>
+    func fetchData() -> AnyPublisher<AccountResponse, Error>
 }
 class CreateAccountRepositoryImpl: CreateAccountRepository {
     
     private let coreDataManager: CoreDataManager
     private let networkingService: NetworkingService
-    private var passes: [Pass] = []
-    private var user: User?
     private var cancellables: Set<AnyCancellable> = []
     
     init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
         self.coreDataManager = coreDataManager
         self.networkingService = networkingService
     }
-    func fetchData(parameters: APIRequestParameters?) -> AnyPublisher<AccountResponse, Error> {
-        let url = URL(string: APIEndpoints.account)!
-        
-        return networkingService.post(url: url, parameters: parameters)
-            .mapError { error -> Error in
-                return error
-            }
+    
+    func fetchData() -> AnyPublisher<AccountResponse, Error> {
+        let router = NetworkManager.Router.getAccountData
+        let request: APIRequestParameters? = nil
+        return networkingService.publisherForRequest(router: router, request: request)
             .tryMap { accountResponse -> AccountResponse in
-                self.coreDataManager.saveAccountResponse(accountResponse)
+                self.coreDataManager.savePassFromResponse(accountResponse)
+                self.coreDataManager.saveUserFromResponse(accountResponse)
                 return accountResponse
             }
             .eraseToAnyPublisher()
