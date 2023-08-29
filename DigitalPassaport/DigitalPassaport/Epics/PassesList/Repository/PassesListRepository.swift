@@ -21,6 +21,6 @@ class PassesListRepositoryImpl: PassesListRepository {
     
     func getPasses() -> [Pass] {
         let passes = coreDataManager.fetchPasses()
-        return passes
+        return passes.map { $0.toPass() }
     }
 }

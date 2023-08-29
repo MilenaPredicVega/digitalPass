@@ -20,7 +20,7 @@ class FlashPassRepositoryImpl: FlashPassRepository {
     
     func getUser() -> User {
         let user = coreDataManager.fetchUser()
-        return user!
+        return user!.toUser()
         // TODO: avoid force unwraping
     }
 }

@@ -35,11 +35,12 @@
 		FD2A39AE2A9DED0C006EE644 /* UpdateCredentialsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39AD2A9DED0C006EE644 /* UpdateCredentialsRepository.swift */; };
 		FD2A39B12A9DEF25006EE644 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = FD2A39B02A9DEF25006EE644 /* JWTDecode */; };
 		FD2A39B42A9DF437006EE644 /* CredentialsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B32A9DF437006EE644 /* CredentialsResponse.swift */; };
-		FD2A39B62A9DFE8C006EE644 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B52A9DFE8C006EE644 /* NetworkManager.swift */; };
+		FD2A39B62A9DFE8C006EE644 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B52A9DFE8C006EE644 /* NetworkRouter.swift */; };
 		FD2A39BA2A9E088D006EE644 /* UserEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39B92A9E088D006EE644 /* UserEntityMapper.swift */; };
 		FD2A39BC2A9E089C006EE644 /* PassEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39BB2A9E089C006EE644 /* PassEntityMapper.swift */; };
 		FD2A39BE2A9E08A7006EE644 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39BD2A9E08A7006EE644 /* UserMapper.swift */; };
 		FD2A39C02A9E08B5006EE644 /* PassMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39BF2A9E08B5006EE644 /* PassMapper.swift */; };
+		FD2A39C22A9E2CF1006EE644 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39C12A9E2CF1006EE644 /* APIConstants.swift */; };
 		FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80A2A8E40C00020D9D5 /* Colors.swift */; };
 		FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */; };
 		FD990DB72A8A6877000065E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD990DB62A8A6877000065E8 /* AppDelegate.swift */; };
@@ -91,11 +92,12 @@
 		FD2A39AB2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsViewModel.swift; sourceTree = "<group>"; };
 		FD2A39AD2A9DED0C006EE644 /* UpdateCredentialsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsRepository.swift; sourceTree = "<group>"; };
 		FD2A39B32A9DF437006EE644 /* CredentialsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsResponse.swift; sourceTree = "<group>"; };
-		FD2A39B52A9DFE8C006EE644 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FD2A39B52A9DFE8C006EE644 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		FD2A39B92A9E088D006EE644 /* UserEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntityMapper.swift; sourceTree = "<group>"; };
 		FD2A39BB2A9E089C006EE644 /* PassEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassEntityMapper.swift; sourceTree = "<group>"; };
 		FD2A39BD2A9E08A7006EE644 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
 		FD2A39BF2A9E08B5006EE644 /* PassMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassMapper.swift; sourceTree = "<group>"; };
+		FD2A39C12A9E2CF1006EE644 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FD48D80A2A8E40C00020D9D5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FD48D80C2A8E41DD0020D9D5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FD990DB32A8A6877000065E8 /* DigitalPassaport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalPassaport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,7 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				FD2A39902A9DE2C3006EE644 /* APIRequestParameters.swift */,
-				FD2A39B52A9DFE8C006EE644 /* NetworkManager.swift */,
+				FD2A39B52A9DFE8C006EE644 /* NetworkRouter.swift */,
+				FD2A39C12A9E2CF1006EE644 /* APIConstants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				FD2A39AC2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift in Sources */,
 				FD990DDB2A8A6C47000065E8 /* CustomButton.swift in Sources */,
 				FDCBA2152A8F6809000DB44C /* Pass.swift in Sources */,
+				FD2A39C22A9E2CF1006EE644 /* APIConstants.swift in Sources */,
 				FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */,
 				FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */,
 				FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */,
@@ -594,7 +598,7 @@
 				FD2A397C2A9DD9B5006EE644 /* DataModel.xcdatamodeld in Sources */,
 				FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */,
 				FD2A39BA2A9E088D006EE644 /* UserEntityMapper.swift in Sources */,
-				FD2A39B62A9DFE8C006EE644 /* NetworkManager.swift in Sources */,
+				FD2A39B62A9DFE8C006EE644 /* NetworkRouter.swift in Sources */,
 				FD990DDF2A8A7592000065E8 /* CreateAccountViewController.swift in Sources */,
 				FD2A39912A9DE2C3006EE644 /* APIRequestParameters.swift in Sources */,
 				FD990DB92A8A6877000065E8 /* SceneDelegate.swift in Sources */,

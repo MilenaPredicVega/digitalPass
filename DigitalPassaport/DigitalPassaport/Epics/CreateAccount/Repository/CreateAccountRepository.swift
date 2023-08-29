@@ -10,7 +10,7 @@ import Combine
 import Alamofire
 
 protocol CreateAccountRepository {
-    func fetchData() -> AnyPublisher<AccountResponse, Error>
+    func fetchData() -> AnyPublisher<AccountResponse, APIError>
 }
 class CreateAccountRepositoryImpl: CreateAccountRepository {
     
@@ -23,15 +23,14 @@ class CreateAccountRepositoryImpl: CreateAccountRepository {
         self.networkingService = networkingService
     }
     
-    func fetchData() -> AnyPublisher<AccountResponse, Error> {
-        let router = NetworkManager.Router.getAccountData
+    func fetchData() -> AnyPublisher<AccountResponse, APIError> {
+        let router = Router.getAccountData
         let request: APIRequestParameters? = nil
         return networkingService.publisherForRequest(router: router, request: request)
-            .tryMap { accountResponse -> AccountResponse in
-                self.coreDataManager.savePassFromResponse(accountResponse)
-                self.coreDataManager.saveUserFromResponse(accountResponse)
-                return accountResponse
-            }
+            .handleEvents(receiveOutput: { [weak self] data in
+                self?.coreDataManager.savePassFromResponse(data)
+                self?.coreDataManager.saveUserFromResponse(data)
+            })
             .eraseToAnyPublisher()
     }
 }

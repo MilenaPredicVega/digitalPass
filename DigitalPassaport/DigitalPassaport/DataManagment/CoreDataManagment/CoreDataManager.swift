@@ -39,22 +39,22 @@ class CoreDataManager {
         }
     }
     
-    func fetchPasses() -> [Pass] {
+    func fetchPasses() -> [PassEntity] {
         let fetchRequest: NSFetchRequest<PassEntity> = PassEntity.fetchRequest()
         do {
             let passEntities = try context.fetch(fetchRequest)
-            return passEntities.map { $0.toPass() }
+            return passEntities
         } catch {
             print("Error fetching data from Core Data: \(error)")
             return []
         }
     }
     
-    func fetchUser() -> User? {
+    func fetchUser() -> UserEntity? {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         do {
             let userEntities = try context.fetch(fetchRequest)
-            return userEntities.first?.toUser()
+            return userEntities.first
         } catch {
             print("Error fetching data from Core Data: \(error)")
             return nil

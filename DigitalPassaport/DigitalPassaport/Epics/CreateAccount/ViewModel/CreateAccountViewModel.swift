@@ -19,18 +19,15 @@ class CreateAccountViewModel {
     
     func createAccountButtonTapped(completion: @escaping (Bool) -> Void) {
         repository.fetchData()
-            .handleEvents(receiveOutput: { data in
-                
-            }, receiveCompletion: { recievedCompletion in
-                switch recievedCompletion {
+            .sink(receiveCompletion: { receivedCompletion in
+                switch receivedCompletion {
                 case .finished:
                     completion(true)
                 case .failure(let error):
                     completion(false)
                     print("API Error: \(error)")
                 }
-            })
-            .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+            }, receiveValue: { _ in })
             .store(in: &cancellables)
     }
 }
