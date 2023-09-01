@@ -6,21 +6,35 @@
 //
 import Foundation
 import CoreData
+import Combine
 
 protocol FlashPassRepository {
-    func getUser() -> User
+    func getUser() -> AnyPublisher<User, APIError>
+    func getCredentials() -> AnyPublisher<[Credential], APIError>
+    
 }
 
 class FlashPassRepositoryImpl: FlashPassRepository {
-    let coreDataManager: CoreDataManager
     
-    init(coreDataManager: CoreDataManager) {
-        self.coreDataManager = coreDataManager
+    func getUser() -> AnyPublisher<User, APIError> {
+        let user = CoreDataManager.shared.fetchUser()
+            .map { userEntity in
+                    if let userEntity = userEntity {
+                        let user = userEntity.toUser()
+                        return user
+                    } else {
+                        return User(firstName: "", lastName: "", email: "", image: "")
+                    }
+                }
+            .eraseToAnyPublisher()
+        return user
     }
     
-    func getUser() -> User {
-        let user = coreDataManager.fetchUser()
-        return user!.toUser()
-        // TODO: avoid force unwraping
+    func getCredentials() -> AnyPublisher<[Credential], APIError> {
+        CoreDataManager.shared.fetchCredentials()
+            .map { credentialsEntities in
+                credentialsEntities.map { $0.toCredential() }
+            }
+            .eraseToAnyPublisher()
     }
 }

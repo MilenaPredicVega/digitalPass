@@ -82,6 +82,12 @@ class UserAccountView: UIView {
     
     func configure(with userInfo: User) {
         userName.text = userInfo.firstName + " " + userInfo.lastName
+        
+        if let iconBase64 = userInfo.image, let iconData = Data(base64Encoded: iconBase64), let iconImage = UIImage(data: iconData) {
+            userImage.image = iconImage
+        } else {
+            userImage.image = UIImage(systemName: "heart.fill")
+        }
     }
     
 }

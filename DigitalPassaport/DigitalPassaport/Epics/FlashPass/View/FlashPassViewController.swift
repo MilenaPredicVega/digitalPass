@@ -9,22 +9,16 @@ import UIKit
 import Combine
 
 class FlashPassViewController: UIViewController {
-    
-    private var cancellables = Set<AnyCancellable>()
     private var viewModel: FlashPassViewModel
+    private var cancellables: Set<AnyCancellable> = []
     
-     var selectedPass: Pass
-     var user: User
-     
-    let accountView: AccountView
+    var accountView: AccountView
     let updateCredentialsButton = CustomButton(type: .system)
      
     init(viewModel: FlashPassViewModel) {
         self.viewModel = viewModel
-        self.selectedPass = viewModel.selectedPass
-        self.user = viewModel.user
-        self.accountView = AccountView(selectedPass: viewModel.selectedPass, user: viewModel.user)
-         
+        accountView = AccountView(selectedPass: self.viewModel.selectedPass, user: viewModel.user)
+       
         super.init(nibName: nil, bundle: nil)
         updateCredentialsButton.addTarget(self, action: #selector(updateCredentialsButtonTapped), for: .touchUpInside)
      }
@@ -35,22 +29,27 @@ class FlashPassViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupBindings()
+        setUpAccountView()
         self.setupView()
     }
     
-    private func setupBindings() {
-        viewModel.$selectedPass
-            .sink { [weak self] pass in
-    // TODO: update ui
-            }
-            .store(in: &cancellables)
-            
+    override func viewWillAppear(_ animated: Bool) {
+        setUpAccountView()
+    }
+    
+    func setUpAccountView() {
         viewModel.$user
-            .sink { [weak self] user in
-    // TODO: update ui
+            .sink { [weak self] newUser in
+                self?.accountView.setUser(newUser)
             }
             .store(in: &cancellables)
+        
+        viewModel.$credentials
+              .sink { [weak self] newCredentials in
+                  self?.accountView.setCredentials(newCredentials)
+              }
+              .store(in: &cancellables)
+    
     }
     
     func setupView () {
@@ -75,6 +74,8 @@ class FlashPassViewController: UIViewController {
     }
     
     private func setUpSubviews() {
+        accountView = AccountView(selectedPass: self.viewModel.selectedPass, user: self.viewModel.user)
+        
         view.addSubview(accountView)
         view.addSubview(updateCredentialsButton)
         
@@ -94,8 +95,7 @@ class FlashPassViewController: UIViewController {
     }
     
     @objc func updateCredentialsButtonTapped() {
-        let updateCredentials = UpdateCredentialsViewController()
+        let updateCredentials = UpdateCredentialsViewController(viewModel: UpdateCredentialsViewModel(repository: UpdateCredentialsRepositoryImpl(networkingService: NetworkingService())))
         navigationController?.pushViewController(updateCredentials, animated: true)
     }
-
 }

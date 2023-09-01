@@ -11,11 +11,12 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var coreDataManager: CoreDataManager!
+    var coreDataManager: CoreDataManager {
+        return CoreDataManager.shared
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        coreDataManager = CoreDataManager(context: persistentContainer.viewContext)
-        coreDataManager.clearCoreData()
+        _ = coreDataManager.clearCoreData()
         return true
     }
 

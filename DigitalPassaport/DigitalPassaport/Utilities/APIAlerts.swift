@@ -17,4 +17,13 @@ class APIAlerts {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
+    
+    static func showSuccess(on viewController: UIViewController) {
+        let title = NSLocalizedString("success title", comment: "")
+        let message = NSLocalizedString("success", comment: "")
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }

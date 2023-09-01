@@ -11,7 +11,7 @@ struct User {
     let firstName: String
     let lastName: String
     let email: String
-    let image: String
+    let image: String?
 }
 
 extension User {

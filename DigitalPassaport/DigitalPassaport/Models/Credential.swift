@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Credential {
+    let type: String
+    let expirationTime: Date?
+}

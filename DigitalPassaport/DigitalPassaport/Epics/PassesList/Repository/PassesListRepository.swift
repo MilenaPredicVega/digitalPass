@@ -7,9 +7,10 @@
 
 import Foundation
 import CoreData
+import Combine
 
 protocol PassesListRepository {
-    func getPasses() -> [Pass]
+    func getPasses() -> AnyPublisher<[Pass], APIError>
 }
 
 class PassesListRepositoryImpl: PassesListRepository {
@@ -19,8 +20,11 @@ class PassesListRepositoryImpl: PassesListRepository {
         self.coreDataManager = coreDataManager
     }
     
-    func getPasses() -> [Pass] {
-        let passes = coreDataManager.fetchPasses()
-        return passes.map { $0.toPass() }
+    func getPasses() -> AnyPublisher<[Pass], APIError> {
+        coreDataManager.fetchPasses()
+            .map { passEntities in
+                passEntities.map { $0.toPass() }
+            }
+            .eraseToAnyPublisher()
     }
 }

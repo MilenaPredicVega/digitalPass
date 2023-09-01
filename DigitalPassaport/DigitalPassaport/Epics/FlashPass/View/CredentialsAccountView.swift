@@ -18,7 +18,7 @@ class CredentialsAccountView: UIView {
         return stackView
     }()
     
-    private let timeExpirationLabel: UILabel = {
+    private let expirationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -27,7 +27,7 @@ class CredentialsAccountView: UIView {
         return label
         }()
     
-    private let timeExpirationValue: UILabel = {
+    private let expirationValue: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
         label.textColor = .white
@@ -36,10 +36,10 @@ class CredentialsAccountView: UIView {
         return label
         }()
     
-    init(timeExpirationLabelText: String = "", timeExpirationValueText: String = "") {
+    init(expirationLabelText: String = "", expirationValueText: String = "") {
         super.init(frame: .zero)
-        timeExpirationLabel.text = timeExpirationLabelText
-        timeExpirationValue.text = timeExpirationValueText
+        expirationLabel.text = expirationLabelText
+        expirationValue.text = expirationValueText
         setUpView()
     }
     
@@ -67,12 +67,15 @@ class CredentialsAccountView: UIView {
     
     private func setUpSubview() {
         addSubview(mainHorizontalStackView)
-        mainHorizontalStackView.addArrangedSubview(timeExpirationLabel)
-        mainHorizontalStackView.addArrangedSubview(timeExpirationValue)
+        mainHorizontalStackView.addArrangedSubview(expirationLabel)
+        mainHorizontalStackView.addArrangedSubview(expirationValue)
     }
     
-    func configure(timeExpirationLabelText: String, timeExpirationValueText: String) {
-        timeExpirationLabel.text = timeExpirationLabelText
-        timeExpirationValue.text = timeExpirationValueText
+    func configure(expirationValueText: String) {
+        expirationValue.text = expirationValueText
+    }
+    
+    func configureTitles(expirationLabelText: String) {
+        expirationLabel.text = expirationLabelText
     }
 }

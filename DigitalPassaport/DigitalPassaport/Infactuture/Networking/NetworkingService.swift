@@ -9,14 +9,7 @@ import Combine
 import Alamofire
 import Foundation
 
-protocol NetworkingServiceProtocol {
-    func publisherForRequest<Request, Response>(
-        router: Router,
-        request: Request?
-    ) -> AnyPublisher<Response, APIError> where Request: Encodable, Response: Decodable
-}
-
-class NetworkingService: NetworkingServiceProtocol {
+class NetworkingService {
     private let session: Session
     
     init() {
@@ -25,21 +18,20 @@ class NetworkingService: NetworkingServiceProtocol {
         self.session = Session(configuration: configuration)
     }
     
-    func publisherForRequest<Request, Response>(
-        router: Router,
-        request: Request? = nil
-    ) -> AnyPublisher<Response, APIError> where Request: Encodable, Response: Decodable {
-        
-//        let serverDefinition: ServerDef = .emptyHeader
-//        let url = URL(string: serverDefinition.baseServerURL + )!
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = router.method.rawValue
-        
+    func publisherForRequest<Input: Encodable, Response: Decodable>(router: NetworkRoutable,
+                                                                    request: Input? = nil,
+                                                                    responseType: Response.Type,
+                                                                    encoder: NetworkParameterEncoder? = nil)
+                                                                            -> AnyPublisher<Response, APIError> {
+        let encoder = encoder?.getEncoder() ?? NetworkParameterEncoder.getDefaultEncoder()
         return session
             .request(
-                APIConstants.baseURL + router.path,
-                method: router.method
-            )
+                router.url,
+                method: router.method,
+                parameters: request,
+                encoder: encoder,
+                headers: router.headers)
+            .validate()
             .publishDecodable(type: Response.self)
             .value()
             .mapError { error -> APIError in

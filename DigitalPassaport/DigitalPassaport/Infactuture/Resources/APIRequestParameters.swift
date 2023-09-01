@@ -8,15 +8,17 @@
 import Foundation
 
 struct APIRequestParameters: Encodable {
-    let parameters: [String: Any]
+    let parameters: [String: Any]?
+    let bodyData: Data?
 
-    init(parameters: [String: Any]) {
-        self.parameters = parameters
-    }
+    init(parameters: [String: Any]? = nil, bodyData: Data? = nil) {
+          self.parameters = parameters
+          self.bodyData = bodyData
+      }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        let encodedData = try JSONSerialization.data(withJSONObject: parameters)
+        let encodedData = try JSONSerialization.data(withJSONObject: parameters ?? [:])
         try container.encode(encodedData, forKey: .parameters)
     }
 

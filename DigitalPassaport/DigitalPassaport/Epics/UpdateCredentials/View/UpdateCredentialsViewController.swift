@@ -9,6 +9,8 @@ import UIKit
 
 class UpdateCredentialsViewController: UIViewController {
     
+    private let viewModel: UpdateCredentialsViewModel
+    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -20,10 +22,11 @@ class UpdateCredentialsViewController: UIViewController {
     let updateTimeCredentials = CustomButton(type: .system)
     let updateReadyCredentials = CustomButton(type: .system)
   
-    init() {
+    init(viewModel: UpdateCredentialsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        updateTimeCredentials.addTarget(self, action: #selector(updateTimeCredentialsButtonTapped), for: .touchUpInside)
-        updateReadyCredentials.addTarget(self, action: #selector(updateReadyCredentialsButtonTapped), for: .touchUpInside)
+        updateTimeCredentials.addTarget(self, action: #selector(updateCredentialsButtonTapped(_:)), for: .touchUpInside)
+        updateReadyCredentials.addTarget(self, action: #selector(updateCredentialsButtonTapped(_:)), for: .touchUpInside)
     }
    
    required init?(coder aDecoder: NSCoder) {
@@ -33,7 +36,6 @@ class UpdateCredentialsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-
     }
     
     func setupViews() {
@@ -50,21 +52,20 @@ class UpdateCredentialsViewController: UIViewController {
         updateReadyCredentials.setTitle("Update ready credentials", for: .normal)
         
         setUpNavigationBackButton()
-        setupContrains()
+        setupConstraints()
     }
     
-    func setupContrains() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             updateTimeCredentials.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             updateReadyCredentials.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
         ])
-        
     }
     
-    func setUpNavigationBackButton () {
-        let leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "arrowLeft"),style: .done, target: self, action: #selector(FlashPassViewController.backTapped(sender:)))
+    func setUpNavigationBackButton() {
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "arrowLeft"), style: .done, target: self, action: #selector(backTapped(sender:)))
         leftBarButtonItem.tintColor = .white
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
     }
@@ -73,12 +74,22 @@ class UpdateCredentialsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func updateTimeCredentialsButtonTapped() {
-        print("Time updated")
+    @objc func updateCredentialsButtonTapped(_ sender: CustomButton) {
+        var type = ""
+        if sender == updateTimeCredentials {
+            type = APIConstants.time
+        } else if sender == updateReadyCredentials {
+            type = APIConstants.ready
+        }
+        
+        self.viewModel.updateCredentialsButtonTapped(withType: type) { success in
+            if success {
+                DispatchQueue.main.async {
+                    APIAlerts.showSuccess(on: self)
+                }
+            } else {
+                APIAlerts.showAPIErrorAlert(on: self)
+            }
+        }
     }
-    
-    @objc func updateReadyCredentialsButtonTapped() {
-        print("Ready updated")
-    }
-
 }

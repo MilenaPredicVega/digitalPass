@@ -11,6 +11,8 @@ import Combine
 class AccountView: UIView {
     private var selectedPass: Pass
     private var user: User
+    private var readyExpirationTime: Date?
+    private var timeExpirationTime: Date?
     
     private var passView = PassAccountView()
     private var timeView = CredentialsAccountView()
@@ -49,19 +51,47 @@ class AccountView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setUser(_ user: User) {
+        self.user = user
+        userAccountView.configure(with: user)
+    }
+    func setExpirationTitles() {
+        timeView.configureTitles(expirationLabelText: NSLocalizedString("TimeExpirationLabel", comment: ""))
+        readyView.configureTitles(expirationLabelText: NSLocalizedString("ReadyExpirationLabel", comment: ""))
+
+    }
+    
+    func setCredentials(_ credentials: [Credential]) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd:MM:yyyy HH:mm"
+        
+        let credentialsByType = credentials.reduce(into: [String: Date]()) { result, credential in
+            if let expirationTime = credential.expirationTime, !credential.type.isEmpty {
+                result[credential.type] = expirationTime
+            }
+        }
+        
+        if let timeExpirationTime = credentialsByType[APIConstants.time] {
+            timeView.configure(expirationValueText: dateFormatter.string(from: timeExpirationTime))
+        }
+        
+        if let readyExpirationTime = credentialsByType[APIConstants.ready] {
+            readyView.configure(expirationValueText: dateFormatter.string(from: readyExpirationTime))
+        }
+    }
+    
     private func setUpView() {
         self.layer.cornerRadius = 10
         self.backgroundColor = UIColor.userBackground
         
         setUpData()
+        setExpirationTitles()
         setUpConstraints()
     }
     
     private func setUpData() {
-        timeView.configure(timeExpirationLabelText: "Time Expiration", timeExpirationValueText: "11:15")
-        readyView.configure(timeExpirationLabelText: "Ready Expiration", timeExpirationValueText: "11:15")
         passView.configure(with: selectedPass)
-        userAccountView.configure(with: user)
+      
     }
     
     private func setUpConstraints() {

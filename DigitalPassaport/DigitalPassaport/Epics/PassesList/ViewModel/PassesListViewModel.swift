@@ -9,11 +9,14 @@ import Combine
 import Foundation
 
 class PassesListViewModel {
-    @Published var passes: [Pass]
+    @Published var passes: [Pass] = []
     private var repository: PassesListRepository
     
     init(passesListRepository: PassesListRepository) {
         self.repository = passesListRepository
-        self.passes = repository.getPasses()
+        repository.getPasses()
+            .replaceError(with: []) 
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$passes)
     }
 }

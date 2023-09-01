@@ -11,7 +11,6 @@
 		FD208BAD2A97452800519DE9 /* PassAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BAC2A97452800519DE9 /* PassAccountView.swift */; };
 		FD208BAF2A97472700519DE9 /* UserAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BAE2A97472700519DE9 /* UserAccountView.swift */; };
 		FD208BB12A9747A300519DE9 /* CredentialsAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BB02A9747A300519DE9 /* CredentialsAccountView.swift */; };
-		FD208BB62A975DAC00519DE9 /* FlashPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BB52A975DAC00519DE9 /* FlashPassViewModel.swift */; };
 		FD208BB82A976AA500519DE9 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BB72A976AA500519DE9 /* CreateAccountViewModel.swift */; };
 		FD208BBB2A976B4500519DE9 /* CreateAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBA2A976B4500519DE9 /* CreateAccountRepository.swift */; };
 		FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */; };
@@ -60,14 +59,21 @@
 		FDCBA2192A8F6842000DB44C /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA2182A8F6842000DB44C /* Credential.swift */; };
 		FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */; };
 		FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21D2A8FA25B000DB44C /* AccountView.swift */; };
+		FDDE497A2AA0794B004AA31A /* CredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE49792AA0794B004AA31A /* CredentialsRequest.swift */; };
+		FDDE497C2AA083CF004AA31A /* NetworkParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE497B2AA083CF004AA31A /* NetworkParameterEncoder.swift */; };
+		FDDE497F2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE497D2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift */; };
+		FDDE49802AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE497E2AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift */; };
+		FDDE49822AA09B0C004AA31A /* CredentialMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE49812AA09B0C004AA31A /* CredentialMapper.swift */; };
+		FDDE49842AA09B23004AA31A /* CredentialEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE49832AA09B23004AA31A /* CredentialEntityMapper.swift */; };
+		FDE288AA2AA20B03001B40A5 /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE288A92AA20B03001B40A5 /* CoreDataPublisher.swift */; };
 		FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */; };
+		FDFA5C6F2A9F5781004853E9 /* FlashPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA5C6E2A9F5781004853E9 /* FlashPassViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD208BAC2A97452800519DE9 /* PassAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassAccountView.swift; sourceTree = "<group>"; };
 		FD208BAE2A97472700519DE9 /* UserAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountView.swift; sourceTree = "<group>"; };
 		FD208BB02A9747A300519DE9 /* CredentialsAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsAccountView.swift; sourceTree = "<group>"; };
-		FD208BB52A975DAC00519DE9 /* FlashPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlashPassViewModel.swift; path = ../../PassesList/ViewModel/FlashPassViewModel.swift; sourceTree = "<group>"; };
 		FD208BB72A976AA500519DE9 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		FD208BBA2A976B4500519DE9 /* CreateAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountRepository.swift; sourceTree = "<group>"; };
 		FD208BBD2A976C3800519DE9 /* CreateAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountUseCase.swift; sourceTree = "<group>"; };
@@ -117,7 +123,15 @@
 		FDCBA2182A8F6842000DB44C /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		FDCBA21B2A8F94DC000DB44C /* FlashPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewController.swift; sourceTree = "<group>"; };
 		FDCBA21D2A8FA25B000DB44C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		FDDE49792AA0794B004AA31A /* CredentialsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsRequest.swift; sourceTree = "<group>"; };
+		FDDE497B2AA083CF004AA31A /* NetworkParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParameterEncoder.swift; sourceTree = "<group>"; };
+		FDDE497D2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredentialEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDDE497E2AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredentialEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDDE49812AA09B0C004AA31A /* CredentialMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialMapper.swift; sourceTree = "<group>"; };
+		FDDE49832AA09B23004AA31A /* CredentialEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialEntityMapper.swift; sourceTree = "<group>"; };
+		FDE288A92AA20B03001B40A5 /* CoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPublisher.swift; sourceTree = "<group>"; };
 		FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewController.swift; sourceTree = "<group>"; };
+		FDFA5C6E2A9F5781004853E9 /* FlashPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,14 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				FD2A39982A9DE4F3006EE644 /* PassesListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		FD208BB42A975D8900519DE9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				FD208BB52A975DAC00519DE9 /* FlashPassViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -197,11 +203,14 @@
 			isa = PBXGroup;
 			children = (
 				FD2A397A2A9DD9B5006EE644 /* DataModel.xcdatamodeld */,
+				FDDE497D2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift */,
+				FDDE497E2AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift */,
 				FD2A39A12A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift */,
 				FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */,
 				FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */,
 				FD2A39A42A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift */,
 				FD2A397E2A9DDA59006EE644 /* CoreDataManager.swift */,
+				FDE288A92AA20B03001B40A5 /* CoreDataPublisher.swift */,
 			);
 			path = CoreDataManagment;
 			sourceTree = "<group>";
@@ -250,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2A39B32A9DF437006EE644 /* CredentialsResponse.swift */,
+				FDDE49792AA0794B004AA31A /* CredentialsRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +278,8 @@
 				FD2A39BB2A9E089C006EE644 /* PassEntityMapper.swift */,
 				FD2A39BD2A9E08A7006EE644 /* UserMapper.swift */,
 				FD2A39BF2A9E08B5006EE644 /* PassMapper.swift */,
+				FDDE49812AA09B0C004AA31A /* CredentialMapper.swift */,
+				FDDE49832AA09B23004AA31A /* CredentialEntityMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -357,8 +369,8 @@
 		FD990DCE2A8A6989000065E8 /* FlashPass */ = {
 			isa = PBXGroup;
 			children = (
+				FDFA5C6D2A9F576D004853E9 /* ViewModel */,
 				FD2A39952A9DE418006EE644 /* Repository */,
-				FD208BB42A975D8900519DE9 /* ViewModel */,
 				FDCBA21A2A8F94BF000DB44C /* View */,
 			);
 			path = FlashPass;
@@ -409,6 +421,7 @@
 				FD2A39902A9DE2C3006EE644 /* APIRequestParameters.swift */,
 				FD2A39B52A9DFE8C006EE644 /* NetworkRouter.swift */,
 				FD2A39C12A9E2CF1006EE644 /* APIConstants.swift */,
+				FDDE497B2AA083CF004AA31A /* NetworkParameterEncoder.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -479,6 +492,14 @@
 				FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FDFA5C6D2A9F576D004853E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FDFA5C6E2A9F5781004853E9 /* FlashPassViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,25 +583,31 @@
 			files = (
 				FDCBA2172A8F681A000DB44C /* User.swift in Sources */,
 				FD2A39A72A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift in Sources */,
+				FDDE49842AA09B23004AA31A /* CredentialEntityMapper.swift in Sources */,
 				FD990DD92A8A6C1F000065E8 /* DynamicCodingKeys.swift in Sources */,
+				FDDE49802AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift in Sources */,
 				FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */,
+				FDE288AA2AA20B03001B40A5 /* CoreDataPublisher.swift in Sources */,
 				FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */,
 				FD208BAF2A97472700519DE9 /* UserAccountView.swift in Sources */,
 				FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */,
 				FD2A39A62A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift in Sources */,
+				FDDE497A2AA0794B004AA31A /* CredentialsRequest.swift in Sources */,
 				FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */,
 				FD2A39B42A9DF437006EE644 /* CredentialsResponse.swift in Sources */,
-				FD208BB62A975DAC00519DE9 /* FlashPassViewModel.swift in Sources */,
 				FD2A39BC2A9E089C006EE644 /* PassEntityMapper.swift in Sources */,
 				FD208BAD2A97452800519DE9 /* PassAccountView.swift in Sources */,
 				FD990DBB2A8A6877000065E8 /* ViewController.swift in Sources */,
 				FD208BC02A97716A00519DE9 /* NetworkingService.swift in Sources */,
 				FD2A39BE2A9E08A7006EE644 /* UserMapper.swift in Sources */,
+				FDDE49822AA09B0C004AA31A /* CredentialMapper.swift in Sources */,
 				FD2A39A52A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift in Sources */,
 				FD2A39AC2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift in Sources */,
 				FD990DDB2A8A6C47000065E8 /* CustomButton.swift in Sources */,
+				FDDE497C2AA083CF004AA31A /* NetworkParameterEncoder.swift in Sources */,
 				FDCBA2152A8F6809000DB44C /* Pass.swift in Sources */,
 				FD2A39C22A9E2CF1006EE644 /* APIConstants.swift in Sources */,
+				FDFA5C6F2A9F5781004853E9 /* FlashPassViewModel.swift in Sources */,
 				FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */,
 				FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */,
 				FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */,
@@ -594,6 +621,7 @@
 				FD2A39992A9DE4F3006EE644 /* PassesListViewModel.swift in Sources */,
 				FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */,
 				FD208BC92A977BA600519DE9 /* APIError.swift in Sources */,
+				FDDE497F2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift in Sources */,
 				FD2A39972A9DE4E0006EE644 /* PassesListRepository.swift in Sources */,
 				FD2A397C2A9DD9B5006EE644 /* DataModel.xcdatamodeld in Sources */,
 				FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */,

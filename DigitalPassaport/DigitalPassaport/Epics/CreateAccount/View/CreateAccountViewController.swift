@@ -15,9 +15,8 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let networkingService = NetworkingService()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        viewModel = CreateAccountViewModel(repository: CreateAccountRepositoryImpl(networkingService: networkingService, coreDataManager: appDelegate.coreDataManager))
+        viewModel = CreateAccountViewModel(repository: CreateAccountRepositoryImpl(networkingService: networkingService))
         
         self.createButton.layer.cornerRadius = 10
     }
