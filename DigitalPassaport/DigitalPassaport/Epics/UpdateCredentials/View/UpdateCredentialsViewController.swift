@@ -75,13 +75,7 @@ class UpdateCredentialsViewController: UIViewController {
     }
     
     @objc func updateCredentialsButtonTapped(_ sender: CustomButton) {
-        var type = ""
-        if sender == updateTimeCredentials {
-            type = APIConstants.time
-        } else if sender == updateReadyCredentials {
-            type = APIConstants.ready
-        }
-        
+        let type = mapType(for: sender)
         self.viewModel.updateCredentialsButtonTapped(withType: type) { success in
             if success {
                 DispatchQueue.main.async {
@@ -90,6 +84,17 @@ class UpdateCredentialsViewController: UIViewController {
             } else {
                 APIAlerts.showAPIErrorAlert(on: self)
             }
+        }
+    }
+    
+    private func mapType(for sender: CustomButton) -> String {
+        switch sender {
+        case updateTimeCredentials:
+            return APIConstants.time
+        case updateReadyCredentials:
+            return APIConstants.ready
+        default:
+            return ""
         }
     }
 }

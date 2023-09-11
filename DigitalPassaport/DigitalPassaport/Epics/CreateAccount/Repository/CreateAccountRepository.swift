@@ -25,7 +25,7 @@ class CreateAccountRepositoryImpl: CreateAccountRepository {
                                               request: Optional<EmptyRequest>.none,
                                               responseType: AccountResponse.self)
         .flatMap({ [weak self] (response: AccountResponse) -> AnyPublisher<Void, APIError> in
-            guard self != nil else {
+            guard let self else {
                 return Fail(error: APIError.noData).eraseToAnyPublisher()
             }
             let coreDataManager = CoreDataManager.shared

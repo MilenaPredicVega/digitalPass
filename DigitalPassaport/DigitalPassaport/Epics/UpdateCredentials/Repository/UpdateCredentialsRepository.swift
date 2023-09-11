@@ -37,13 +37,12 @@ class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
             encoder: NetworkParameterEncoder.json
         )
         .flatMap { credentialResponse -> AnyPublisher<Void, APIError> in
-            let credential = credentialResponse.toCredential()
-            guard let validCredential = credential else {
+            guard let credential = credentialResponse.toCredential() else {
                 return Fail(error: APIError.unknownError)
                     .eraseToAnyPublisher()
             }
             
-            return CoreDataManager.shared.saveCredentialFromResponse(validCredential)
+            return CoreDataManager.shared.saveCredentialFromResponse(credential)
                 .map { _ in }
                 .eraseToAnyPublisher()
         }

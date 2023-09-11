@@ -19,12 +19,10 @@ class FlashPassRepositoryImpl: FlashPassRepository {
     func getUser() -> AnyPublisher<User, APIError> {
         let user = CoreDataManager.shared.fetchUser()
             .map { userEntity in
-                    if let userEntity = userEntity {
-                        let user = userEntity.toUser()
-                        return user
-                    } else {
+                    guard let userEntity else {
                         return User(firstName: "", lastName: "", email: "", image: "")
                     }
+                return userEntity.toUser()
                 }
             .eraseToAnyPublisher()
         return user

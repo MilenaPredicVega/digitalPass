@@ -15,6 +15,5 @@
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
-        <relationship name="passes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PassEntity"/>
     </entity>
 </model>
