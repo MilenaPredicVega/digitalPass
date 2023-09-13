@@ -17,9 +17,9 @@ class CreateAccountRepositoryImpl: CreateAccountRepository {
     private let networkingService: NetworkingService
     private let coreDataManager: CoreDataManager
     
-    init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
+    init(networkingService: NetworkingService, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.networkingService = networkingService
-        self.coreDataManager = CoreDataManager.shared
+        self.coreDataManager = coreDataManager
     }
     
     

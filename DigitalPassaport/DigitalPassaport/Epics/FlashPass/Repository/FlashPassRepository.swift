@@ -18,8 +18,8 @@ class FlashPassRepositoryImpl: FlashPassRepository {
     
     let coreDataManager: CoreDataManager
     
-    init(coreDataManager: CoreDataManager) {
-        self.coreDataManager = CoreDataManager.shared
+    init(coreDataManager: CoreDataManager = CoreDataManager.shared) {
+        self.coreDataManager = coreDataManager
     }
     
     

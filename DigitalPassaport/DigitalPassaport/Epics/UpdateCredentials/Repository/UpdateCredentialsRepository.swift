@@ -18,9 +18,9 @@ class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
     let networkingService: NetworkingService
     let coreDataManager: CoreDataManager
     
-    init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
+    init(networkingService: NetworkingService, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.networkingService = networkingService
-        self.coreDataManager = CoreDataManager.shared
+        self.coreDataManager = coreDataManager
     }
     
     func updateCredential(withType type: String, for selectedPass: Pass) -> AnyPublisher<Void, APIError> {
@@ -39,7 +39,7 @@ class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
                 return Fail(error: APIError.unknownError)
                     .eraseToAnyPublisher()
             }
-            return self.coreDataManager.saveCredentialFromResponse(credential, for: selectedPass.id)
+            return coreDataManager.saveCredentialFromResponse(credential, for: selectedPass.id)
                 .map { _ in }
                 .eraseToAnyPublisher()
         }
