@@ -26,8 +26,6 @@
 		FD2A39992A9DE4F3006EE644 /* PassesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39982A9DE4F3006EE644 /* PassesListViewModel.swift */; };
 		FD2A399E2A9DE623006EE644 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD2A399D2A9DE623006EE644 /* Localizable.strings */; };
 		FD2A39A02A9DE669006EE644 /* APIAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A399F2A9DE669006EE644 /* APIAlerts.swift */; };
-		FD2A39A52A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A12A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift */; };
-		FD2A39A62A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */; };
 		FD2A39A72A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */; };
 		FD2A39A82A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39A42A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift */; };
 		FD2A39AC2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A39AB2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift */; };
@@ -61,11 +59,13 @@
 		FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBA21D2A8FA25B000DB44C /* AccountView.swift */; };
 		FDDE497A2AA0794B004AA31A /* CredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE49792AA0794B004AA31A /* CredentialsRequest.swift */; };
 		FDDE497C2AA083CF004AA31A /* NetworkParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE497B2AA083CF004AA31A /* NetworkParameterEncoder.swift */; };
-		FDDE497F2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE497D2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift */; };
-		FDDE49802AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE497E2AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift */; };
 		FDDE49822AA09B0C004AA31A /* CredentialMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE49812AA09B0C004AA31A /* CredentialMapper.swift */; };
 		FDDE49842AA09B23004AA31A /* CredentialEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE49832AA09B23004AA31A /* CredentialEntityMapper.swift */; };
 		FDE288AA2AA20B03001B40A5 /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE288A92AA20B03001B40A5 /* CoreDataPublisher.swift */; };
+		FDE7E2AB2AB197F40023B9B9 /* PassEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E2A92AB197F40023B9B9 /* PassEntity+CoreDataClass.swift */; };
+		FDE7E2AC2AB197F40023B9B9 /* PassEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E2AA2AB197F40023B9B9 /* PassEntity+CoreDataProperties.swift */; };
+		FDE7E2AF2AB198510023B9B9 /* CredentialEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E2AD2AB198510023B9B9 /* CredentialEntity+CoreDataClass.swift */; };
+		FDE7E2B02AB198510023B9B9 /* CredentialEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E2AE2AB198510023B9B9 /* CredentialEntity+CoreDataProperties.swift */; };
 		FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */; };
 		FDFA5C6F2A9F5781004853E9 /* FlashPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA5C6E2A9F5781004853E9 /* FlashPassViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -91,8 +91,6 @@
 		FD2A399B2A9DE5DA006EE644 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD2A399D2A9DE623006EE644 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FD2A399F2A9DE669006EE644 /* APIAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAlerts.swift; sourceTree = "<group>"; };
-		FD2A39A12A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FD2A39A42A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FD2A39AB2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsViewModel.swift; sourceTree = "<group>"; };
@@ -125,11 +123,13 @@
 		FDCBA21D2A8FA25B000DB44C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		FDDE49792AA0794B004AA31A /* CredentialsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsRequest.swift; sourceTree = "<group>"; };
 		FDDE497B2AA083CF004AA31A /* NetworkParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParameterEncoder.swift; sourceTree = "<group>"; };
-		FDDE497D2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredentialEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDDE497E2AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredentialEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FDDE49812AA09B0C004AA31A /* CredentialMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialMapper.swift; sourceTree = "<group>"; };
 		FDDE49832AA09B23004AA31A /* CredentialEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialEntityMapper.swift; sourceTree = "<group>"; };
 		FDE288A92AA20B03001B40A5 /* CoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPublisher.swift; sourceTree = "<group>"; };
+		FDE7E2A92AB197F40023B9B9 /* PassEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDE7E2AA2AB197F40023B9B9 /* PassEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDE7E2AD2AB198510023B9B9 /* CredentialEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredentialEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDE7E2AE2AB198510023B9B9 /* CredentialEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CredentialEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FDED027F2A8B5C7C001C9E65 /* PassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewController.swift; sourceTree = "<group>"; };
 		FDFA5C6E2A9F5781004853E9 /* FlashPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPassViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				FD2A397A2A9DD9B5006EE644 /* DataModel.xcdatamodeld */,
-				FDDE497D2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift */,
-				FDDE497E2AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift */,
-				FD2A39A12A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift */,
-				FD2A39A22A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift */,
+				FDE7E2AD2AB198510023B9B9 /* CredentialEntity+CoreDataClass.swift */,
+				FDE7E2AE2AB198510023B9B9 /* CredentialEntity+CoreDataProperties.swift */,
+				FDE7E2A92AB197F40023B9B9 /* PassEntity+CoreDataClass.swift */,
+				FDE7E2AA2AB197F40023B9B9 /* PassEntity+CoreDataProperties.swift */,
 				FD2A39A32A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift */,
 				FD2A39A42A9DE6A7006EE644 /* UserEntity+CoreDataProperties.swift */,
 				FD2A397E2A9DDA59006EE644 /* CoreDataManager.swift */,
@@ -585,14 +585,13 @@
 				FD2A39A72A9DE6A7006EE644 /* UserEntity+CoreDataClass.swift in Sources */,
 				FDDE49842AA09B23004AA31A /* CredentialEntityMapper.swift in Sources */,
 				FD990DD92A8A6C1F000065E8 /* DynamicCodingKeys.swift in Sources */,
-				FDDE49802AA09735004AA31A /* CredentialEntity+CoreDataProperties.swift in Sources */,
 				FD208BBE2A976C3800519DE9 /* CreateAccountUseCase.swift in Sources */,
 				FDE288AA2AA20B03001B40A5 /* CoreDataPublisher.swift in Sources */,
 				FDCBA21E2A8FA25B000DB44C /* AccountView.swift in Sources */,
 				FD208BAF2A97472700519DE9 /* UserAccountView.swift in Sources */,
 				FD48D80B2A8E40C00020D9D5 /* Colors.swift in Sources */,
-				FD2A39A62A9DE6A7006EE644 /* PassEntity+CoreDataProperties.swift in Sources */,
 				FDDE497A2AA0794B004AA31A /* CredentialsRequest.swift in Sources */,
+				FDE7E2B02AB198510023B9B9 /* CredentialEntity+CoreDataProperties.swift in Sources */,
 				FDCBA21C2A8F94DC000DB44C /* FlashPassViewController.swift in Sources */,
 				FD2A39B42A9DF437006EE644 /* CredentialsResponse.swift in Sources */,
 				FD2A39BC2A9E089C006EE644 /* PassEntityMapper.swift in Sources */,
@@ -601,7 +600,6 @@
 				FD208BC02A97716A00519DE9 /* NetworkingService.swift in Sources */,
 				FD2A39BE2A9E08A7006EE644 /* UserMapper.swift in Sources */,
 				FDDE49822AA09B0C004AA31A /* CredentialMapper.swift in Sources */,
-				FD2A39A52A9DE6A7006EE644 /* PassEntity+CoreDataClass.swift in Sources */,
 				FD2A39AC2A9DEC8D006EE644 /* UpdateCredentialsViewModel.swift in Sources */,
 				FD990DDB2A8A6C47000065E8 /* CustomButton.swift in Sources */,
 				FDDE497C2AA083CF004AA31A /* NetworkParameterEncoder.swift in Sources */,
@@ -611,6 +609,7 @@
 				FDED02802A8B5C7C001C9E65 /* PassesListViewController.swift in Sources */,
 				FDCBA2122A8F52D8000DB44C /* TableViewCell.swift in Sources */,
 				FD208BC32A97761B00519DE9 /* AccountResponse.swift in Sources */,
+				FDE7E2AF2AB198510023B9B9 /* CredentialEntity+CoreDataClass.swift in Sources */,
 				FD208BB12A9747A300519DE9 /* CredentialsAccountView.swift in Sources */,
 				FDCBA2192A8F6842000DB44C /* Credential.swift in Sources */,
 				FD2A397F2A9DDA59006EE644 /* CoreDataManager.swift in Sources */,
@@ -621,8 +620,8 @@
 				FD2A39992A9DE4F3006EE644 /* PassesListViewModel.swift in Sources */,
 				FD208BC72A977AC400519DE9 /* MessageHelper.swift in Sources */,
 				FD208BC92A977BA600519DE9 /* APIError.swift in Sources */,
-				FDDE497F2AA09735004AA31A /* CredentialEntity+CoreDataClass.swift in Sources */,
 				FD2A39972A9DE4E0006EE644 /* PassesListRepository.swift in Sources */,
+				FDE7E2AC2AB197F40023B9B9 /* PassEntity+CoreDataProperties.swift in Sources */,
 				FD2A397C2A9DD9B5006EE644 /* DataModel.xcdatamodeld in Sources */,
 				FD48D80D2A8E41DD0020D9D5 /* Fonts.swift in Sources */,
 				FD2A39BA2A9E088D006EE644 /* UserEntityMapper.swift in Sources */,
@@ -630,6 +629,7 @@
 				FD990DDF2A8A7592000065E8 /* CreateAccountViewController.swift in Sources */,
 				FD2A39912A9DE2C3006EE644 /* APIRequestParameters.swift in Sources */,
 				FD990DB92A8A6877000065E8 /* SceneDelegate.swift in Sources */,
+				FDE7E2AB2AB197F40023B9B9 /* PassEntity+CoreDataClass.swift in Sources */,
 				FD2A39AE2A9DED0C006EE644 /* UpdateCredentialsRepository.swift in Sources */,
 				FD2A39C02A9E08B5006EE644 /* PassMapper.swift in Sources */,
 				FD208BB82A976AA500519DE9 /* CreateAccountViewModel.swift in Sources */,

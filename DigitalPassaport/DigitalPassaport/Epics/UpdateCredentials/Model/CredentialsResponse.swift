@@ -16,7 +16,7 @@ struct CredentialResponse: Decodable{
     func toCredential() -> Credential? {
         do {
             let jwt = try JWTDecode.decode(jwt: self.jwt)
-            let expirationTime = jwt.expiresAt ?? Date()
+            let expirationTime = jwt.expiresAt
             
             let credential = Credential(type: self.type, expirationTime: expirationTime)
             return credential

@@ -13,24 +13,15 @@ class CoreDataManager {
     
     static let shared = CoreDataManager()
     
-    var credentialsChangesPublisher: CoreDataChangesPublisher<CredentialEntity>?
+    var credentialsChangesPublisher: CoreDataChangesPublisher<CredentialEntity>
     private var cancellables: Set<AnyCancellable> = []
     
     private let context: NSManagedObjectContext
     
     private init() {
         self.context = CoreDataStack.shared.persistentContainer.viewContext
-        
         let sortDescriptor = NSSortDescriptor(key: "expirationTime", ascending: true)
-
         self.credentialsChangesPublisher = CoreDataChangesPublisher(context: context, sortDescriptor: sortDescriptor)
-         
-        credentialsChangesPublisher?.changesPublisher
-            .sink { credentials in
-                // Ovde dobijate ažurirane Credentials iz CoreData
-                print("Promenjeni Credentials: \(credentials)")
-            }
-            .store(in: &cancellables)
     }
     
     private func perform<T>(_ block: @escaping () throws -> T) -> AnyPublisher<T, APIError> {
@@ -62,13 +53,6 @@ class CoreDataManager {
             try self.context.save()
         }
     }
-    
-    func saveCredentialFromResponse(_ credentialResponse: Credential) -> AnyPublisher<Void, APIError> {
-        perform {
-            _ = credentialResponse.self
-            try self.context.save()
-        }
-    }
 
     func fetchPasses() -> AnyPublisher<[PassEntity], APIError> {
         perform {
@@ -86,15 +70,19 @@ class CoreDataManager {
         }
     }
     
-    func fetchCredentials() -> AnyPublisher<[CredentialEntity], APIError> {
+    func saveCredentialFromResponse(_ credentialResponse: Credential, for passId: UUID) -> AnyPublisher<Void, APIError> {
+        perform {
+            let credentialEntity = credentialResponse.toEntity(in: self.context)
+            credentialEntity.passID = passId
+            try self.context.save()
+        }
+    }
+    
+    func fetchCredentials(for selectedPassId: UUID) -> AnyPublisher<[CredentialEntity], APIError> {
         perform {
             let fetchRequest: NSFetchRequest<CredentialEntity> = CredentialEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "passID == %@", selectedPassId as CVarArg)
             let credentialsEntities = try self.context.fetch(fetchRequest)
-            
-            for credential in credentialsEntities {
-                print("Type: \(credential.type ?? "Unknown"), Expiration: \(credential.expirationTime ?? Date())")
-            }
-            
             return credentialsEntities
         }
     }
@@ -117,14 +105,17 @@ class CoreDataStack {
     
     static let shared = CoreDataStack()
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataModel")
-        container.loadPersistentStores { (_, error) in
-            if let error = error {
-                fatalError("Failed to load Core Data stack: \(error)")
+        let description = NSPersistentStoreDescription()
+        description.shouldMigrateStoreAutomatically = true
+        description.shouldInferMappingModelAutomatically = true
+        container.persistentStoreDescriptions = [description]
+        container.loadPersistentStores(completionHandler: { (_, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        }
-        
+        })
         return container
     }()
 }

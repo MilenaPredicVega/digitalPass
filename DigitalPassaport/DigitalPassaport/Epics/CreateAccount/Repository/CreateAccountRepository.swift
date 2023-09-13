@@ -15,10 +15,13 @@ protocol CreateAccountRepository {
 class CreateAccountRepositoryImpl: CreateAccountRepository {
     
     private let networkingService: NetworkingService
+    private let coreDataManager: CoreDataManager
     
-    init(networkingService: NetworkingService) {
+    init(networkingService: NetworkingService, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.networkingService = networkingService
+        self.coreDataManager = coreDataManager
     }
+    
     
     func fetchData() -> AnyPublisher<Void, APIError> {
         networkingService.publisherForRequest(router: AccountRouter.getAccountData,
@@ -28,7 +31,6 @@ class CreateAccountRepositoryImpl: CreateAccountRepository {
             guard let self else {
                 return Fail(error: APIError.noData).eraseToAnyPublisher()
             }
-            let coreDataManager = CoreDataManager.shared
             
             return coreDataManager.savePassFromResponse(response)
                 .zip(coreDataManager.saveUserFromResponse(response))

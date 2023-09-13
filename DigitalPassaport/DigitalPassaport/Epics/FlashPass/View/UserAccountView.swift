@@ -9,7 +9,7 @@ import UIKit
 
 class UserAccountView: UIView {
     
-    private let checkMarkImage: UIImageView = {
+    private let statusImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "heart.fill")
         imageView.contentMode = .scaleAspectFit
@@ -67,17 +67,23 @@ class UserAccountView: UIView {
             userImage.heightAnchor.constraint(equalToConstant: 190),
             userImage.widthAnchor.constraint(equalToConstant: 190),
             
-            checkMarkImage.topAnchor.constraint(equalTo: topAnchor, constant: 60),
-            checkMarkImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            checkMarkImage.heightAnchor.constraint(equalToConstant: 30),
-            checkMarkImage.widthAnchor.constraint(equalToConstant: 30),
+            statusImage.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            statusImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            statusImage.heightAnchor.constraint(equalToConstant: 30),
+            statusImage.widthAnchor.constraint(equalToConstant: 30),
         ])
     }
     
     private func setUpSubviews() {
-        addSubview(checkMarkImage)
+        addSubview(statusImage)
         addSubview(userImage)
         addSubview(userName)
+    }
+    
+    func setStatusImage(_ imageName: String) {
+        if let image = UIImage(named: imageName) {
+            statusImage.image = image
+        }
     }
     
     func configure(with userInfo: User) {
@@ -88,6 +94,5 @@ class UserAccountView: UIView {
         } else {
             userImage.image = UIImage(systemName: "heart.fill")
         }
-    }
-    
+    }    
 }

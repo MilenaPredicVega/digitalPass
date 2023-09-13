@@ -10,39 +10,36 @@ import Foundation
 import CoreData
 
 protocol UpdateCredentialsRepository {
-    func updateCredential(withType type: String) -> AnyPublisher<Void, APIError>
+    func updateCredential(withType type: String,for selectedPass: Pass) -> AnyPublisher<Void, APIError>
 }
 
 class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
     
     let networkingService: NetworkingService
+    let coreDataManager: CoreDataManager
     
-    init(networkingService: NetworkingService) {
+    init(networkingService: NetworkingService, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.networkingService = networkingService
+        self.coreDataManager = coreDataManager
     }
     
-    func getCredentials() -> AnyPublisher<[Credential], APIError> {
-        CoreDataManager.shared.fetchCredentials()
-            .map { credentialsEntities in
-                credentialsEntities.map { $0.toCredential() }
-            }
-            .eraseToAnyPublisher()
-    }
-    
-    func updateCredential(withType type: String) -> AnyPublisher<Void, APIError> {
+    func updateCredential(withType type: String, for selectedPass: Pass) -> AnyPublisher<Void, APIError> {
         networkingService.publisherForRequest(
             router: AccountRouter.updateCredentials,
             request: UpdateCredentialsRequest(type: type),
             responseType: CredentialResponse.self,
             encoder: NetworkParameterEncoder.json
         )
-        .flatMap { credentialResponse -> AnyPublisher<Void, APIError> in
+        .flatMap { [weak self] credentialResponse -> AnyPublisher<Void, APIError> in
+            guard let self = self else {
+                return Fail(error: APIError.unknownError)
+                    .eraseToAnyPublisher()
+            }
             guard let credential = credentialResponse.toCredential() else {
                 return Fail(error: APIError.unknownError)
                     .eraseToAnyPublisher()
             }
-            
-            return CoreDataManager.shared.saveCredentialFromResponse(credential)
+            return coreDataManager.saveCredentialFromResponse(credential, for: selectedPass.id)
                 .map { _ in }
                 .eraseToAnyPublisher()
         }

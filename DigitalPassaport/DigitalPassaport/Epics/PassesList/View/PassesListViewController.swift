@@ -106,7 +106,7 @@ extension PassesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         let selectedPass = passes[indexPath.row]
-        let flashPassViewController = FlashPassViewController(viewModel: FlashPassViewModel(flashPassRepository: FlashPassRepositoryImpl(), selectedPass: selectedPass))
+        let flashPassViewController = FlashPassViewController(viewModel: FlashPassViewModel(flashPassRepository: FlashPassRepositoryImpl(coreDataManager: CoreDataManager.shared), selectedPass: selectedPass))
         navigationController?.pushViewController(flashPassViewController, animated: false)
         tableView.deselectRow(at: indexPath, animated: false)
     }

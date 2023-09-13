@@ -2,7 +2,7 @@
 //  CredentialEntity+CoreDataClass.swift
 //  DigitalPassaport
 //
-//  Created by Milena Predic on 31.8.23..
+//  Created by Milena Predic on 13.9.23..
 //
 //
 
