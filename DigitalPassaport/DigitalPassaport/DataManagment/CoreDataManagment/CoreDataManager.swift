@@ -70,18 +70,18 @@ class CoreDataManager {
         }
     }
     
-    func saveCredentialFromResponse(_ credentialResponse: Credential, for selectedPass: Pass) -> AnyPublisher<Void, APIError> {
+    func saveCredentialFromResponse(_ credentialResponse: Credential, for passId: UUID) -> AnyPublisher<Void, APIError> {
         perform {
             let credentialEntity = credentialResponse.toEntity(in: self.context)
-            credentialEntity.passID = selectedPass.id
+            credentialEntity.passID = passId
             try self.context.save()
         }
     }
     
-    func fetchCredentials(for selectedPass: Pass) -> AnyPublisher<[CredentialEntity], APIError> {
+    func fetchCredentials(for selectedPassId: UUID) -> AnyPublisher<[CredentialEntity], APIError> {
         perform {
             let fetchRequest: NSFetchRequest<CredentialEntity> = CredentialEntity.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "passID == %@", selectedPass.id as CVarArg)
+            fetchRequest.predicate = NSPredicate(format: "passID == %@", selectedPassId as CVarArg)
             let credentialsEntities = try self.context.fetch(fetchRequest)
             return credentialsEntities
         }

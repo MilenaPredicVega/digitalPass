@@ -20,7 +20,7 @@ class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
     
     init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
         self.networkingService = networkingService
-        self.coreDataManager = coreDataManager
+        self.coreDataManager = CoreDataManager.shared
     }
     
     func updateCredential(withType type: String, for selectedPass: Pass) -> AnyPublisher<Void, APIError> {
@@ -30,12 +30,16 @@ class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
             responseType: CredentialResponse.self,
             encoder: NetworkParameterEncoder.json
         )
-        .flatMap {credentialResponse -> AnyPublisher<Void, APIError> in
+        .flatMap { [weak self] credentialResponse -> AnyPublisher<Void, APIError> in
+            guard let self = self else {
+                return Fail(error: APIError.unknownError)
+                    .eraseToAnyPublisher()
+            }
             guard let credential = credentialResponse.toCredential() else {
                 return Fail(error: APIError.unknownError)
                     .eraseToAnyPublisher()
             }
-            return self.coreDataManager.saveCredentialFromResponse(credential, for: selectedPass)
+            return self.coreDataManager.saveCredentialFromResponse(credential, for: selectedPass.id)
                 .map { _ in }
                 .eraseToAnyPublisher()
         }

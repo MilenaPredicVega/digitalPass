@@ -19,7 +19,7 @@ class FlashPassRepositoryImpl: FlashPassRepository {
     let coreDataManager: CoreDataManager
     
     init(coreDataManager: CoreDataManager) {
-        self.coreDataManager = coreDataManager
+        self.coreDataManager = CoreDataManager.shared
     }
     
     
@@ -36,7 +36,7 @@ class FlashPassRepositoryImpl: FlashPassRepository {
     }
     
     func getCredentials(selectedPass: Pass) -> AnyPublisher<[Credential], APIError> {
-        coreDataManager.fetchCredentials(for: selectedPass)
+        coreDataManager.fetchCredentials(for: selectedPass.id)
             .map { credentialsEntities in
                 credentialsEntities.map { $0.toCredential() }
             }

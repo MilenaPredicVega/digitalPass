@@ -19,7 +19,7 @@ class CreateAccountRepositoryImpl: CreateAccountRepository {
     
     init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
         self.networkingService = networkingService
-        self.coreDataManager = coreDataManager
+        self.coreDataManager = CoreDataManager.shared
     }
     
     
