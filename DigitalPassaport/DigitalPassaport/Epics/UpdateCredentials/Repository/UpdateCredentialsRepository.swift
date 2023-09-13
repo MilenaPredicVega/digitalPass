@@ -10,39 +10,32 @@ import Foundation
 import CoreData
 
 protocol UpdateCredentialsRepository {
-    func updateCredential(withType type: String) -> AnyPublisher<Void, APIError>
+    func updateCredential(withType type: String,for selectedPass: Pass) -> AnyPublisher<Void, APIError>
 }
 
 class UpdateCredentialsRepositoryImpl: UpdateCredentialsRepository {
     
     let networkingService: NetworkingService
+    let coreDataManager: CoreDataManager
     
-    init(networkingService: NetworkingService) {
+    init(networkingService: NetworkingService, coreDataManager: CoreDataManager) {
         self.networkingService = networkingService
+        self.coreDataManager = coreDataManager
     }
     
-    func getCredentials() -> AnyPublisher<[Credential], APIError> {
-        CoreDataManager.shared.fetchCredentials()
-            .map { credentialsEntities in
-                credentialsEntities.map { $0.toCredential() }
-            }
-            .eraseToAnyPublisher()
-    }
-    
-    func updateCredential(withType type: String) -> AnyPublisher<Void, APIError> {
+    func updateCredential(withType type: String, for selectedPass: Pass) -> AnyPublisher<Void, APIError> {
         networkingService.publisherForRequest(
             router: AccountRouter.updateCredentials,
             request: UpdateCredentialsRequest(type: type),
             responseType: CredentialResponse.self,
             encoder: NetworkParameterEncoder.json
         )
-        .flatMap { credentialResponse -> AnyPublisher<Void, APIError> in
+        .flatMap {credentialResponse -> AnyPublisher<Void, APIError> in
             guard let credential = credentialResponse.toCredential() else {
                 return Fail(error: APIError.unknownError)
                     .eraseToAnyPublisher()
             }
-            
-            return CoreDataManager.shared.saveCredentialFromResponse(credential)
+            return self.coreDataManager.saveCredentialFromResponse(credential, for: selectedPass)
                 .map { _ in }
                 .eraseToAnyPublisher()
         }

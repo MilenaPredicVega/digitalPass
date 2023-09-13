@@ -58,7 +58,7 @@ class AccountView: UIView {
     func setExpirationTitles() {
         timeView.configureTitles(expirationLabelText: NSLocalizedString("TimeExpirationLabel", comment: ""))
         readyView.configureTitles(expirationLabelText: NSLocalizedString("ReadyExpirationLabel", comment: ""))
-
+        
     }
     
     func setCredentials(_ credentials: [Credential]) {
@@ -91,7 +91,7 @@ class AccountView: UIView {
     
     private func setUpData() {
         passView.configure(with: selectedPass)
-      
+        
     }
     
     private func setUpConstraints() {
@@ -141,6 +141,10 @@ class AccountView: UIView {
         addSubview(verticalMainStackView)
     }
     
+    func updateAppearanceForCredentialsValid(_ valid: Bool) {
+        userAccountView.layer.borderColor = valid ? UIColor.green.cgColor : UIColor.red.cgColor
+        userAccountView.setStatusImage(valid ? "checkmark" : "exclamation")
+    }
 }
 
 

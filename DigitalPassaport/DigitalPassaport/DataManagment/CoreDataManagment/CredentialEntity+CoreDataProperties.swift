@@ -2,7 +2,7 @@
 //  CredentialEntity+CoreDataProperties.swift
 //  DigitalPassaport
 //
-//  Created by Milena Predic on 31.8.23..
+//  Created by Milena Predic on 13.9.23..
 //
 //
 
@@ -16,8 +16,9 @@ extension CredentialEntity {
         return NSFetchRequest<CredentialEntity>(entityName: "CredentialEntity")
     }
 
-    @NSManaged public var type: String?
     @NSManaged public var expirationTime: Date?
+    @NSManaged public var passID: UUID?
+    @NSManaged public var type: String?
 
 }
 

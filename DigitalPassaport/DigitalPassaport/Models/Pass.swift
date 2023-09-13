@@ -10,7 +10,7 @@ import Foundation
 //Domain Model
 struct Pass {
     
-    let id: String?
+    let id: UUID
     let name: String
     let description: String
     let icon: String?
@@ -26,6 +26,6 @@ extension Pass {
             return nil
         }
         
-        return Pass(id: container.allKeys.first?.stringValue, name: name, description: description, icon: icon)
+        return Pass(id: UUID(), name: name, description: description, icon: icon)
     }
 }

@@ -32,11 +32,7 @@ class FlashPassViewController: UIViewController {
         setUpAccountView()
         self.setupView()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setUpAccountView()
-    }
-    
+
     func setUpAccountView() {
         viewModel.$user
             .sink { [weak self] newUser in
@@ -47,6 +43,7 @@ class FlashPassViewController: UIViewController {
         viewModel.$credentials
               .sink { [weak self] newCredentials in
                   self?.accountView.setCredentials(newCredentials)
+                  self?.accountView.updateAppearanceForCredentialsValid(self?.viewModel.areCredentialsValid(credentials: newCredentials) ?? false)
               }
               .store(in: &cancellables)
     
@@ -95,7 +92,7 @@ class FlashPassViewController: UIViewController {
     }
     
     @objc func updateCredentialsButtonTapped() {
-        let updateCredentials = UpdateCredentialsViewController(viewModel: UpdateCredentialsViewModel(repository: UpdateCredentialsRepositoryImpl(networkingService: NetworkingService())))
+        let updateCredentials = UpdateCredentialsViewController(viewModel: UpdateCredentialsViewModel(repository: UpdateCredentialsRepositoryImpl(networkingService: NetworkingService(), coreDataManager: CoreDataManager.shared), selectedPass: viewModel.selectedPass))
         navigationController?.pushViewController(updateCredentials, animated: true)
     }
 }

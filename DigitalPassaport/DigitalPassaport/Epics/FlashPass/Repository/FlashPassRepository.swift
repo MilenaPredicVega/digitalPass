@@ -10,11 +10,18 @@ import Combine
 
 protocol FlashPassRepository {
     func getUser() -> AnyPublisher<User, APIError>
-    func getCredentials() -> AnyPublisher<[Credential], APIError>
-    
+    func getCredentials(selectedPass: Pass) -> AnyPublisher<[Credential], APIError>
+    func observeCredentialsChanges() -> AnyPublisher<[Credential], Never>
 }
 
 class FlashPassRepositoryImpl: FlashPassRepository {
+    
+    let coreDataManager: CoreDataManager
+    
+    init(coreDataManager: CoreDataManager) {
+        self.coreDataManager = coreDataManager
+    }
+    
     
     func getUser() -> AnyPublisher<User, APIError> {
         let user = CoreDataManager.shared.fetchUser()
@@ -28,11 +35,18 @@ class FlashPassRepositoryImpl: FlashPassRepository {
         return user
     }
     
-    func getCredentials() -> AnyPublisher<[Credential], APIError> {
-        CoreDataManager.shared.fetchCredentials()
+    func getCredentials(selectedPass: Pass) -> AnyPublisher<[Credential], APIError> {
+        coreDataManager.fetchCredentials(for: selectedPass)
             .map { credentialsEntities in
                 credentialsEntities.map { $0.toCredential() }
             }
             .eraseToAnyPublisher()
+    }
+    
+    func observeCredentialsChanges() -> AnyPublisher<[Credential], Never> {
+        coreDataManager.credentialsChangesPublisher.changesPublisher
+             .receive(on: DispatchQueue.main)
+             .map { $0.map { $0.toCredential()} }
+             .eraseToAnyPublisher()
     }
 }

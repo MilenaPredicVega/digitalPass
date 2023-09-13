@@ -2,7 +2,7 @@
 //  PassEntity+CoreDataProperties.swift
 //  DigitalPassaport
 //
-//  Created by Milena Predic on 29.8.23..
+//  Created by Milena Predic on 13.9.23..
 //
 //
 
@@ -16,10 +16,10 @@ extension PassEntity {
         return NSFetchRequest<PassEntity>(entityName: "PassEntity")
     }
 
-    @NSManaged public var id: String?
-    @NSManaged public var name: String?
     @NSManaged public var descriptionCD: String?
     @NSManaged public var icon: String?
+    @NSManaged public var id: UUID?
+    @NSManaged public var name: String?
 
 }
 

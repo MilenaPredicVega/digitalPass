@@ -12,7 +12,7 @@ class FlashPassViewModel {
     @Published var user: User = User(firstName: "", lastName: "", email: "", image: "")
     @Published var credentials: [Credential] = []
     var selectedPass: Pass
-    private var repository: FlashPassRepository
+    var repository: FlashPassRepository
     
     @Published var credentialsFromCoreData: [CredentialEntity] = []
     
@@ -24,7 +24,7 @@ class FlashPassViewModel {
         self.selectedPass = selectedPass
         
         
-        Publishers.CombineLatest(repository.getUser(), repository.getCredentials())
+        Publishers.CombineLatest(repository.getUser(), repository.getCredentials(selectedPass: selectedPass))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -39,11 +39,25 @@ class FlashPassViewModel {
             })
             .store(in: &cancellables)
         
-        self.coreDataChangeCancellable = CoreDataManager.shared.credentialsChangesPublisher?.changesPublisher
-            .receive(on: DispatchQueue.main)
+        repository.observeCredentialsChanges()
             .sink(receiveValue: { [weak self] credentialsEntities in
-                var credentialsUpdated = credentialsEntities.map{$0.toCredential()}
-                self?.credentials = credentialsUpdated
+                
+                self?.credentials = credentialsEntities
             })
+            .store(in: &cancellables)
+    }
+    
+    func areCredentialsValid(credentials: [Credential]) -> Bool {
+        let defaultTime = Calendar.current.date(byAdding: .minute, value: -100, to: Date()) ?? Date()
+        
+        let isReadyValid = credentials.contains { credential in
+            return credential.type == "READY" && (credential.expirationTime ?? defaultTime) > Date.now
+        }
+        
+        let isTimeValid = credentials.contains { credential in
+            return credential.type == "TIME" && (credential.expirationTime ?? defaultTime) > Date.now
+        }
+        
+        return isReadyValid && isTimeValid
     }
 }
